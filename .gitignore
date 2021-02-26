@@ -23,6 +23,22 @@ yarn-debug.log*
 yarn-error.log*
 
 
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/django,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,react
