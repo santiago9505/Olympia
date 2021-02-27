@@ -10,11 +10,11 @@ const Navbar = () => {
       </article>
       <section className="flex col-span-10 w-full">
         <input
-          className="w-full h-6 rounded-full px-3 focus:outline-none"
+          className="w-full h-8 rounded-full px-3 focus:outline-none"
           type="text"
         />
         <img
-          className="absolute right-6 w-6 border-l-2 p-1"
+          className="absolute right-6 w-8 border-l-2 p-1"
           src={LupaIcon}
           alt="Hojita"
         />

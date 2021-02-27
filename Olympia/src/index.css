@@ -3,45 +3,51 @@
 @tailwind utilities;
 
 @layer utilities {
-  .carousel-open:checked + .carousel-item {
-    position: static;
-    opacity: 100;
+  .slider {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
   }
-  .carousel-item {
-    -webkit-transition: opacity 0.6s ease-out;
-    transition: opacity 0.6s ease-out;
-  }
-  #carousel-1:checked ~ .control-1,
-  #carousel-2:checked ~ .control-2,
-  #carousel-3:checked ~ .control-3 {
-    display: block;
-  }
-  .carousel-indicators {
-    list-style: none;
-    margin: 0;
+
+  .slider ul {
+    display: flex;
     padding: 0;
-    position: absolute;
-    bottom: 2%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 10;
+    width: 300%;
+
+    animation: cambio 15s infinite alternate linear;
   }
-  #carousel-1:checked
-    ~ .control-1
-    ~ .carousel-indicators
-    li:nth-child(1)
-    .carousel-bullet,
-  #carousel-2:checked
-    ~ .control-2
-    ~ .carousel-indicators
-    li:nth-child(2)
-    .carousel-bullet,
-  #carousel-3:checked
-    ~ .control-3
-    ~ .carousel-indicators
-    li:nth-child(3)
-    .carousel-bullet {
-    color: #2b6cb0;
+
+  .slider li {
+    width: 100%;
+    list-style: none;
+  }
+
+  .slider img {
+    width: 100%;
+  }
+
+  @keyframes cambio {
+    0% {
+      margin-left: 0;
+    }
+
+    25% {
+      margin-left: -100%;
+    }
+    45% {
+      margin-left: -100%;
+    }
+    70% {
+      margin-left: -200%;
+    }
+  }
+  .snap-x {
+    scroll-snap-type: x proximity;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .snap-start {
+    scroll-snap-align: start;
   }
 }
