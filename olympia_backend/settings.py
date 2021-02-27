@@ -83,29 +83,29 @@ WSGI_APPLICATION = 'olympia_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# import pymysql  # noqa: 402
-# pymysql.version_info = (1, 4, 6, 'final', 0)  # change mysqlclient version
-# pymysql.install_as_MySQLdb()
-
-
-
 # DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'HOST': '127.0.0.1',
-#             'PORT': '3306',
-#             'NAME': 'ecommerce_database',
-#             'USER': str(os.getenv('USER')),
-#             'PASSWORD': str(os.getenv('PASSWORD')),
-#         }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
+# }
+
+import pymysql  # noqa: 402
+pymysql.version_info = (1, 4, 6, 'final', 0)  # change mysqlclient version
+pymysql.install_as_MySQLdb()
+
+PASSWORD_DB = str(os.getenv('DATABASE_PASS'))
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'NAME': 'ecommerce_database',
+            'USER': 'daniel_admin',
+            'PASSWORD': PASSWORD_DB,
+        }
+    }
 
 
 # Password validation
