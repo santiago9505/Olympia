@@ -59,7 +59,7 @@ const Header = () => {
           <div role="button" className="text-4xl" onClick={() => { toggleMenu('categories') }}>
             <BsListUl/>
           </div>
-          <Menu toggle={state.toggle.categories}>
+          <Menu toggle={state.toggle.categories} selector="categories">
             <Categories/>
           </Menu>
         </div>
@@ -77,7 +77,7 @@ const Header = () => {
           <div role="button" className="text-4xl" onClick={() => { toggleMenu('profile') }}>
             <BsPeopleCircle/>
           </div>
-          <Menu toggle={state.toggle.profile}>
+          <Menu toggle={state.toggle.profile} selector="profileOptions">
             <ProfileOptions/>
           </Menu>
         </div>
@@ -85,7 +85,7 @@ const Header = () => {
           <div role="button" className="text-4xl" onClick={() => { toggleMenu('cart') }}>
             <FiShoppingCart/>
           </div>
-          <Menu toggle={state.toggle.cart}>
+          <Menu toggle={state.toggle.cart} selector="cart">
             <Cart/>
           </Menu>
         </div>
@@ -93,7 +93,7 @@ const Header = () => {
           <div role="button" className="text-4xl" onClick={() => { toggleMenu('options') }}>
             <BsThreeDotsVertical/>
           </div>
-          <Menu toggle={state.toggle.options}>
+          <Menu toggle={state.toggle.options} selector="options">
             <Options/>
           </Menu>
         </div>
