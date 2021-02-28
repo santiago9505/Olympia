@@ -5,6 +5,9 @@ module.exports = {
     boxShadow: {
       custom: "0 -3px 6px #00000059;",
     },
+    gridTemplateRows: {
+      '4-custom': 'repeat(4, auto)'
+    },
     keyframes: {
       fadeIn: {
         "0%": { opacity: 0 },
@@ -16,7 +19,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active'],
+    },
   },
   plugins: [],
 };
