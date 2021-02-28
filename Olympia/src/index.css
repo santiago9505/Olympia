@@ -26,6 +26,10 @@
     width: 100%;
   }
 
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
+
   @keyframes cambio {
     0% {
       margin-left: 0;
