@@ -5,7 +5,7 @@ import Main from "./components/Main/Main.js";
 
 function App() {
   return (
-    <div className="grid grid-cols-12">
+    <div className="grid grid-cols-12 relative">
       <Navbar />
       <Carousel />
       <Main />

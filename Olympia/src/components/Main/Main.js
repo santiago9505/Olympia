@@ -4,7 +4,7 @@ import Popular from "./Popular.js";
 
 const Main = () => {
   return (
-    <div className="col-span-12">
+    <div className="col-span-12 mb-20">
       <Categories />
       <Popular />
     </div>
