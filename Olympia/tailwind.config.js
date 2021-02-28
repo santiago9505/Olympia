@@ -3,7 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     boxShadow: {
-      custom: "0 -3px 6px #00000059;",
+      custom: "0 -3px 6px #00000059;"
+    },
+    gridTemplateRows: {
+      '4-custom': 'repeat(4, auto)',
+      '3-custom': 'repeat(3, auto)',
     },
     gridTemplateRows: {
       "4-custom": "repeat(4, auto)",
