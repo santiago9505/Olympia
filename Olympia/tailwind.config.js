@@ -9,6 +9,9 @@ module.exports = {
       '4-custom': 'repeat(4, auto)',
       '3-custom': 'repeat(3, auto)',
     },
+    gridTemplateRows: {
+      "4-custom": "repeat(4, auto)",
+    },
     keyframes: {
       fadeIn: {
         "0%": { opacity: 0 },
@@ -21,7 +24,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['active']
+      backgroundColor: ["active"],
     },
   },
   plugins: [],
