@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL } from "../../constants/index.js";
 
 const Users = () => {
-  state = {
+  const [state, setState] = useState({
     pk: 0,
     email: "",
     password: "",
@@ -11,9 +11,24 @@ const Users = () => {
     first_name: "",
     last_name: "",
     gender: "",
-  };
+  });
 
-  return <div></div>;
+  const fecthData = () => {
+    const { data } = axios({
+      url: API_URL,
+      method: 'get',
+    });
+  }
+
+  useEffect(() => {
+
+  }, []);
+
+  return (
+    <div>
+
+    </div>
+  );
 };
 
 export default Users;
