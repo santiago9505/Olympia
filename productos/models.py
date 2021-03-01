@@ -10,14 +10,14 @@ class Producto(models.Model):
 
     stok=models.IntegerField()
 
-    img_url=models.ImageField(upload_to='productos/images')
+    img_url=models.ImageField(upload_to='productos/images',)
 
     product_choices=[
         ('moda','Productos de moda'),
-        ('aseo', 'Productos de aseo personal')
+        ('aseo', 'Productos de aseo personal'),
         ('manufactura','Productos de manufactura')
     ]
-    tag_use=models.CharField(choices=product_choices)
+    tag_use=models.CharField(choices=product_choices, max_length=50)
     
     
 
