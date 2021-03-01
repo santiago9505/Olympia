@@ -2,7 +2,7 @@ import React from "react";
 
 const Address = () => {
   return (
-    <div className="">
+    <div className="mb-20">
       <article className="h-28 flex items-end justify-center pb-4 border-b-8">
         <h1 className="text-3xl text-center">Dirección de residencia</h1>
       </article>
