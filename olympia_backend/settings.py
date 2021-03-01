@@ -131,3 +131,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'Olympia/build/static',
 ]
+
+
+CORS_ORIGIN_ALLOW_ALL = True
