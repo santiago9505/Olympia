@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { BsCircle } from 'react-icons/bs';
 
 //Components
-import NewPaymentMethod from './NewPaymentMethod';
+import NewPaymentMethod from '../../components/NewPaymentMethod/NewPaymentMethod';
 
 const toggle = {
   method_1: false,

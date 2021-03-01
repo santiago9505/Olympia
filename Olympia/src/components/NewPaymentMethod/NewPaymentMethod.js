@@ -6,8 +6,8 @@ import { FaCcVisa, FaCcMastercard, FaCcPaypal, FaCcApplePay } from 'react-icons/
 import { SiAmericanexpress } from 'react-icons/si';
 
 //Components
-import Input from './Input';
-import Select from './Select';
+import Input from '../Input/Input';
+import Select from '../Select/Select';
 
 const NewPaymentMethod = ({ toggle }) => {
   return (
