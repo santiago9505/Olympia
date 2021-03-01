@@ -137,7 +137,7 @@ const NewPaymentMethod = ({ toggle }) => {
                   id="phoneNumber"
                   name="phoneNumber"
                   defaultValue="3010101010"
-                  className="block ml-16"
+                  className="block ml-16 w-full"
                   />
               </div>
             </div>

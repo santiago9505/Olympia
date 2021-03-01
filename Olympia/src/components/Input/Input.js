@@ -16,7 +16,7 @@ const Input = ({ forText, labelText, typeText, patternDef, idText, nameText, def
         id={ idText }
         name={ nameText }
         defaultValue={ defaultText }
-        className="block border-b-2 border-gray-400"
+        className="block border-b-2 border-gray-400 w-full"
       />
     </div>
   );
