@@ -80,7 +80,7 @@ const Profile = () => {
                   id="idNumber"
                   name="idNumber"
                   defaultValue="1010101010"
-                  className="block ml-14"
+                  className="block ml-14 w-full"
                   />
               </div>
             </div>
@@ -100,7 +100,7 @@ const Profile = () => {
                   id="phoneNumber"
                   name="phoneNumber"
                   defaultValue="3010101010"
-                  className="block ml-16"
+                  className="block ml-16 w-full"
                   />
               </div>
             </div>
