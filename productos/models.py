@@ -4,7 +4,7 @@ from django.db import models
 class Producto(models.Model):
     Name=models.CharField(max_length=50)
 
-    price=models.FloatField()
+    price=models.DecimalField( max_digits=5, decimal_places=2, default=str)
 
     description=models.TextField()
 
