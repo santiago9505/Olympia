@@ -2,7 +2,7 @@ import React from "react";
 
 const CreateAccount = () => {
   return (
-    <div className="col-span-12 h-screen mt-6">
+    <div className="col-span-12 h-screen my-8">
       <h1 className="text-3xl text-center mb-6">Create An Account</h1>
       <form className="mx-8" action="">
         <section className="text-xl">
@@ -64,15 +64,19 @@ const CreateAccount = () => {
             </p>
           </section>
         </section>
-        <button className="bg-blue-500 text-white rounded-xl w-40 text-center">
-          Create Account
-        </button>
-        <p>
-          Already registered?{" "}
-          <a className="underline">Sign into your Account</a>
-        </p>
+        <div className="w-full flex justify-center my-4">
+          <button className="bg-blue-500 text-white rounded-3xl w-40 h-8">
+            Create Account
+          </button>
+        </div>
+        <div className="flex justify-center my-6">
+          <p className="text-xs">
+            Already registered?
+            <a className="underline">Sign into your Account</a>
+          </p>
+        </div>
       </form>
-      <article className="mt-6 bg-gray-400 w-72 h-52 mx-auto rounded-2xl p-2">
+      <article className="mt-6 bg-gray-400 w-10/12 h-52 my-8 mx-auto rounded-2xl p-2">
         <img src="" alt="Promocion" />
       </article>
     </div>
