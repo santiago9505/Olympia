@@ -21,7 +21,7 @@ const App = () => (
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/profile/address" component={Address} />
         <Route exact path="/payment-method" component={PaymentMethod} />
-        <Route exact path="/integration" component={Products} />
+        <Route exact path="/integration" component={Products}/>
       </Switch>
     </Layout>
   </BrowserRouter>

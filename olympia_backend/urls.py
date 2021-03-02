@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/productos/', views.productos_list),
     path('api/productos/<str:product_type>', views.productos_filtrados),
+    path('api/comentarios/<str:product_id>' wiews.comentarios_filtrados),
 ]
