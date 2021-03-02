@@ -1,5 +1,6 @@
 //React
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //Libs
 import { MdModeEdit } from 'react-icons/md';
@@ -117,10 +118,10 @@ const Profile = () => {
       <div>
         <div className="flex justify-between">
           <button type="button" className="p-0.5 px-3 mb-1 rounded-full text-base border-2 border-gray-400 bg-white active:bg-gray-400">
-            <a href="#">Residence address</a>
+            <Link to="/profile/address">Residence address</Link>
           </button>
           <button type="button" className="p-0.5 px-3 mb-1 rounded-full text-base border-2 border-gray-400 bg-white active:bg-gray-400">
-            <a href="#">Payment method</a>
+            <Link to="/payment-method">Payment method</Link>
           </button>
         </div>
       </div>

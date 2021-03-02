@@ -1,5 +1,6 @@
 //React
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //Libs
 import { FaFacebookSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -65,7 +66,7 @@ const Login = () => {
         </div>
         <p className="text-xs">
           New to "name e-commerce"? &nbsp;
-          <a href="#" className="underline">Create an account</a>
+          <Link to="/signup" className="underline">Create an account</Link>
         </p>
       </div>
       <div className="flex justify-center text-9xl">
