@@ -13,9 +13,9 @@ class Producto(models.Model):
     img_url=models.ImageField(upload_to='productos/images',)
 
     product_choices=[
-        ('Moda','Productos de moda'),
-        ('Limpieza', 'Productos de limpieza'),
-        ('Manufactura','Productos de manufactura')
+        ('Moda','Productos de Moda'),
+        ('Limpieza', 'Productos de Limpieza'),
+        ('Manufactura','Productos de Manufactura')
     ]
     tag_use=models.CharField(choices=product_choices, max_length=50)
     
