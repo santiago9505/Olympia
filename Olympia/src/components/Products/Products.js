@@ -26,7 +26,7 @@ const Products = () => {
     fecthData();
   }, []);
 
-  return <div>{state}</div>;
+  return <div>{console.log(state)}</div>;
 };
 
 export default Products;
