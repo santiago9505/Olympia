@@ -11,15 +11,20 @@ class Profile(models.Model):
     Proxy model that extends the base data with more info
     """
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name='profiles', on_delete=models.CASCADE)
 
     phone_prefix_choices = [
-        ('MX', '+52'),
-        ('CO', '+57'),
-        ('PE', '+51'),
+        ('+52', 'MX'),
+        ('+57', 'CO'),
+        ('+51', 'PE' ),
     ]
 
-    phone_prefix = models.CharField(max_length=4, blank=True)
+    phone_prefix = models.CharField(
+        max_length=4,
+        choices=phone_prefix_choices,
+        default='empty', 
+        blank=True
+    )
 
 
     phone_number = models.CharField(max_length=20, blank=True)
