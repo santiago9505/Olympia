@@ -20,5 +20,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^api/productos/$', views.productos_list),
+    path('api/productos/', views.productos_list),
+    path('api/productos/<str:product_type>', views.productos_filtrados),
 ]

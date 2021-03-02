@@ -4,18 +4,18 @@ from django.db import models
 class Producto(models.Model):
     Name=models.CharField(max_length=50)
 
-    price=models.DecimalField( max_digits=5, decimal_places=2, default=str)
+    price=models.CharField(max_length=10)
 
     description=models.TextField()
 
-    stok=models.IntegerField()
+    stok=models.CharField(max_length=10)
 
     img_url=models.ImageField(upload_to='productos/images',)
 
     product_choices=[
-        ('moda','Productos de moda'),
-        ('aseo', 'Productos de aseo personal'),
-        ('manufactura','Productos de manufactura')
+        ('Moda','Productos de moda'),
+        ('Limpieza', 'Productos de limpieza'),
+        ('Manufactura','Productos de manufactura')
     ]
     tag_use=models.CharField(choices=product_choices, max_length=50)
     

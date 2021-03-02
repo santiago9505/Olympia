@@ -9,9 +9,7 @@ from .serializers import *
 def productos_list(request):
     if request.method == 'GET':
         data = Producto.objects.all()
-
         serializer =ProductoSerializer(data, context={'request': request}, many=True)
-
         return Response(serializer.data)
 
     elif request.method == 'POST':
@@ -21,3 +19,16 @@ def productos_list(request):
             return Response(status=status.HTTP_201_CREATED)
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def productos_filtrados(request,product_type):
+        if request.method=='GET':
+            try:
+                data = Producto.objects.filter(tag_use=product_type)
+            except Producto.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
+            serializer =ProductoSerializer(data, context={'request': request}, many=True)
+
+            return Response(serializer.data)
