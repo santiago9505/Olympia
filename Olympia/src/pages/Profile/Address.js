@@ -1,10 +1,19 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
+//Libs
+import { IoArrowBackCircleOutline } from 'react-icons/io5';
 
 const Address = () => {
   return (
-    <div className="">
+    <div className="mb-20 relative">
+      <div className="absolute top-0 pl-8 pt-3 text-3xl cursor-pointer">
+        <Link to="/profile">
+          <IoArrowBackCircleOutline/>
+        </Link>
+      </div>
       <article className="h-28 flex items-end justify-center pb-4 border-b-8">
-        <h1 className="text-3xl text-center">Dirección de residencia</h1>
+        <h1 className="text-3xl text-center">Residence address</h1>
       </article>
       <form className="mx-8 my-8" action="">
         <section className="text-xs">

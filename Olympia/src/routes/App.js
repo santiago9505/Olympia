@@ -8,17 +8,19 @@ import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import Profile from "../pages/Profile/Profile";
 import Address from "../pages/Profile/Address";
+import PaymentMethod from "../pages/PaymentMethod/PaymentMethod";
 
 const App = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/Signup" component={SignUp} />
-        <Route exact path="/Login" component={Login} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/profile/address" component={Address} />
+        <Route exact path="/payment-method" component={PaymentMethod} />
       </Switch>
     </Layout>
   </BrowserRouter>

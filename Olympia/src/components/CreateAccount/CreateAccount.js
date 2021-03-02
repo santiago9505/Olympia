@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CreateAccount = () => {
   return (
-    <div className="col-span-12 h-screen my-8">
+    <div className="col-span-12 my-8 mb-20">
       <h1 className="text-3xl text-center mb-6">Create An Account</h1>
       <form className="mx-8" action="">
         <section className="text-xl">
@@ -72,7 +73,7 @@ const CreateAccount = () => {
         <div className="flex justify-center my-6">
           <p className="text-xs">
             Already registered?
-            <a className="underline">Sign into your Account</a>
+            <Link to="/login" className="underline">Sign into your Account</Link>
           </p>
         </div>
       </form>

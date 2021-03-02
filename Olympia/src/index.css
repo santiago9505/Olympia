@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+  .h-670 {
+    height: 670px;
+  }
   .slider {
     width: 100%;
     margin: auto;

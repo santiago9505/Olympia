@@ -38,13 +38,20 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
 )
 
 LOCAL_APPS = (
     'users',
+    'productos',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+
+    
+    
+    
 
 
 MIDDLEWARE = [
@@ -55,6 +62,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'olympia_backend.urls'
@@ -161,4 +171,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/media/'
 
+
+CORS_ORIGIN_ALLOW_ALL = True
 
