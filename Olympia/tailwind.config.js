@@ -3,20 +3,35 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     boxShadow: {
-      custom: '0 -3px 6px #00000059;'
+      custom: "0 -3px 6px #00000059;"
+    },
+    gridTemplateRows: {
+      '4-custom': 'repeat(4, auto)',
+      '3-custom': 'repeat(3, auto)',
     },
     keyframes: {
       fadeIn: {
-        '0%': { opacity: 0 },
-        '100%': { opacity: 1 }
-      }
+        "0%": { opacity: 0 },
+        "100%": { opacity: 1 },
+      },
     },
     animation: {
-      fadeIn: 'fadeIn 1s ease'
+      fadeIn: "fadeIn 1s ease",
+    },
+    transitionProperty: {
+      'custom-all': 'all'
+    },
+    transitionTimingFunction: {
+      'custom-ease': 'ease'
+    },
+    transitionDuration: {
+      'custom-1000': '1000ms'
     }
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["active"],
+    },
   },
   plugins: [],
 };

@@ -5,7 +5,7 @@ import Imagen3 from "../../assets/static/imagen-3.jpg";
 
 const Carousel = () => {
   return (
-    <hero class="slider col-span-12 h-8/11">
+    <div className="slider col-span-12 h-8/11">
       <ul>
         <li>
           <img src={Imagen1} alt="" />
@@ -17,7 +17,7 @@ const Carousel = () => {
           <img src={Imagen3} alt="" />
         </li>
       </ul>
-    </hero>
+    </div>
   );
 };
 
