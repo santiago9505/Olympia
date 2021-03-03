@@ -19,7 +19,7 @@ module.exports = {
       fadeIn: "fadeIn 1s ease",
     },
     transitionProperty: {
-      'custom-all': 'all'
+      'custom-all': 'all',
     },
     transitionTimingFunction: {
       'custom-ease': 'ease'
