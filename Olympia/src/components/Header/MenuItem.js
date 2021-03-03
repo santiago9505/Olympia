@@ -15,7 +15,7 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
       break;
 
     case 'lateralMenu':
-      classList = 'text-xl mb-3 xl:text-lg'
+      classList = 'text-sm mb-3'
       break;
 
     default:
@@ -24,7 +24,7 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
   }
 
   return (
-    <li className={`${classList} text-lg`}>
+    <li className={`${classList} text-sm`}>
       <Link to={url ? url : '/'} className="block w-full flex items-center">
         {
           Icon &&
