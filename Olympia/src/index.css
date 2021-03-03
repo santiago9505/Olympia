@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer utilities {
+  * {
+    outline: none !important;
+  }
+
+  .ml-percent {
+    margin-left: 50%;
+  }
+
   .h-670 {
     height: 670px;
   }
