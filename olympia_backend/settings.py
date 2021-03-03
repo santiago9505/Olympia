@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-DJANGO_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,16 +40,9 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-)
-
-LOCAL_APPS = (
     'users',
     'productos',
-)
-
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
-
-    
+]
     
     
 
