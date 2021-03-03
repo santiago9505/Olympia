@@ -53,7 +53,7 @@ const Header = () => {
   }
 
   return (
-    <header className="block fixed bottom-0 z-50 w-full shadow-custom bg-gray-400 md:hidden">
+    <header className="absolute bottom-0 z-50 w-full shadow-custom bg-gray-400">
       <div className="flex flex-row justify-between items-center p-2">
         <div>
           <div role="button" className="text-4xl" onClick={() => { toggleMenu('categories') }}>
