@@ -11,7 +11,7 @@ class Profile(models.Model):
     Proxy model that extends the base data with more info
     """
 
-    user = models.OneToOneField(User, related_name='profiles', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
 
     phone_prefix_choices = [
         ('+52', 'MX'),

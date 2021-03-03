@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/productos/', product_views.productos_list),
     path('api/productos/<str:product_type>', product_views.productos_filtrados),
-    path('api/users/', user_views.user_profile),
+    path('api/users/', user_views.user_list),
+    path('api/users/<str:username>', user_views.users_filtrados),
 ]
