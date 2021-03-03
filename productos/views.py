@@ -32,3 +32,16 @@ def productos_filtrados(request,product_type):
             serializer =ProductoSerializer(data, context={'request': request}, many=True)
 
             return Response(serializer.data)
+
+
+@api_view(['GET'])
+def producto_detalle(request):
+        if request.method=='GET':
+            try:
+                data = Producto.objects.all()
+            except Producto.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
+            serializer =ProductoDetalleSerializer(data, context={'request': request}, many=True)
+
+            return Response(serializer.data)
