@@ -21,16 +21,19 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
 
   return (
     <li className={`${classList} text-lg`}>
-      <Link to={url} className="block w-full flex items-center">
-        <span className="inline-block mr-2 text-xl">
-          <Icon/>
-        </span>
+      <Link to={url ? url : '/'} className="block w-full flex items-center">
+        {
+          Icon &&
+          <span className="inline-block mr-2 text-xl">
+            <Icon/>
+          </span>
+        }
         <span className="flex-grow">
           {text}
         </span>
         {
           Icon2 &&
-          <span className="inline-block">
+          <span className="inline-block ml-1">
             <Icon2/>
           </span>
           }
