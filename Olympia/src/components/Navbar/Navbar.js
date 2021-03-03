@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import LateralMenu from '../LateralMenu/LateralMenu';
 
 //Libs
 import ArbolIcon from "../../assets/static/arbol-icon.svg";
 import LupaIcon from "../../assets/static/lupa.svg";
 import { FiShoppingCart, FiMenu } from 'react-icons/fi';
+import { FaGifts, FaHeart } from "react-icons/fa";
+import { HiFire } from "react-icons/hi";
+import { BsPeopleCircle } from "react-icons/bs";
+
+//Components
+import LateralMenu from '../LateralMenu/LateralMenu';
+import MenuItem from '../Header/MenuItem';
 
 const toggleLateralMenu = {
   isOpen: false,
@@ -28,7 +34,7 @@ const Navbar = () => {
           <img className="w-4/6 mx-2" src={ArbolIcon} alt="Logo" />
         </Link>
       </article>
-      <section className="relative flex col-span-10 w-full md:col-span-8">
+      <section className="relative flex col-span-10 w-full md:col-span-8 xl:col-span-7">
         <input
           className="w-full h-8 rounded-full px-3 focus:outline-none"
           type="text"
@@ -46,6 +52,13 @@ const Navbar = () => {
           </button>
         </div>
       </section>
+      <section className="hidden xl:block xl:col-span-1">
+        <div>
+          <button className="border-none outline-none text-3xl">
+            <BsPeopleCircle/>
+          </button>
+        </div>
+      </section>
       <section className="hidden col-span-1 md:block">
         <div>
           <button className="border-none outline-none text-3xl" onClick={handleLateralMenu}>
@@ -54,6 +67,13 @@ const Navbar = () => {
         </div>
       </section>
     </div>
+    <section className="flex justify-center">
+      <ul className="hidden xl:flex justify-between w-1/2 p-4">
+        <MenuItem Icon={HiFire} text="Ofertas"/>
+        <MenuItem Icon={FaGifts} text="Tarjetas de regalo"/>
+        <MenuItem Icon={FaHeart} text="Favoritos"/>
+      </ul>
+    </section>
     <LateralMenu isOpen={state.toggleLateralMenu.isOpen}/>
     </>
   );

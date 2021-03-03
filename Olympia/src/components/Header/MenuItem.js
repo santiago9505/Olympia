@@ -14,6 +14,10 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
       classList = 'justify-self-center'
       break;
 
+    case 'lateralMenu':
+      classList = 'text-xl mb-3 xl:text-lg'
+      break;
+
     default:
       classList = '';
       break;
@@ -28,7 +32,7 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
             <Icon/>
           </span>
         }
-        <span className="flex-grow">
+        <span>
           {text}
         </span>
         {
