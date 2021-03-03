@@ -25,7 +25,7 @@ module.exports = {
       'custom-ease': 'ease'
     },
     transitionDuration: {
-      'custom-1000': '1000ms'
+      'custom-1000': '1000ms',
     }
   },
   variants: {
