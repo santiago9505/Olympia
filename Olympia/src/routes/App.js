@@ -10,6 +10,7 @@ import Profile from "../pages/Profile/Profile";
 import Address from "../pages/Profile/Address";
 import PaymentMethod from "../pages/PaymentMethod/PaymentMethod";
 import Checkout from "../pages/Checkout/Checkout";
+import paymentConfirmation from '../pages/PaymentConfirmation/PaymentConfirmation';
 
 const App = () => (
   <BrowserRouter>
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path="/payment-method" component={PaymentMethod} />
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/integration" component={Products} />
+        <Route exact path="/payment-confirmation" component={paymentConfirmation} />
       </Switch>
     </Layout>
   </BrowserRouter>

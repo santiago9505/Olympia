@@ -8,11 +8,11 @@ Nota: yo coloco python3 en las instrucciones por que tambien tengo python2, asi 
 
 En la consola colocar lo siguiente:
 
-    python3 -m venv venv 
+    python3 -m venv venv
 
 el primer venv es el nombre del paquete el segundo es el nombre del ambiente virtual, no importa si lo creas en la carpeta del repositorio, ya esta ignorado en el .gitignore
 
-Activas el paquete  usando 
+Activas el paquete  usando
 
     source venv/bin/activate
 
@@ -40,7 +40,7 @@ Si arranca el servidor todo va bien, debes crear las migraciones con los siguien
 
     python3 manage.py migrate
 
-Te crea una base de datos SQLite3 en local, pudedes usar DBbrowser Sqlite para ver el contenido, vas a usar las tablas 
+Te crea una base de datos SQLite3 en local, pudedes usar DBbrowser Sqlite para ver el contenido, vas a usar las tablas
 
 * auth_user
 * users_profile
@@ -49,7 +49,7 @@ Te crea una base de datos SQLite3 en local, pudedes usar DBbrowser Sqlite para v
 
 ir a 127.0.0.1:8000/admin y ver si aparece el log in de django
 
-si aparece crear un superuser usando 
+si aparece crear un superuser usando
 
     python3 manage.py createsuperuser
 
