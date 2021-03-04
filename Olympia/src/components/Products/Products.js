@@ -12,6 +12,7 @@ const Products = () => {
     stok: "",
     img_url: "",
     tag_use: "",
+    coment : []
   });
 
   const fecthData = async () => {

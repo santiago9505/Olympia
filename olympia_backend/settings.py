@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+#from dotenv import load_dotenv
+#load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'v6wxw$_4e1e$wo0@bf6)yp*4o$w0k=z8yuwh7t^1-_y_j+p6zo'
-
+#SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,8 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'users',
     'productos',
 ]
+    
+    
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,6 +94,23 @@ DATABASES = {
     }
 }
 
+# import pymysql  # noqa: 402
+# pymysql.version_info = (1, 4, 6, 'final', 0)  # change mysqlclient version
+# pymysql.install_as_MySQLdb()
+
+# PASSWORD_DB = str(os.getenv('DATABASE_PASS'))
+
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'HOST': '127.0.0.1',
+#             'PORT': '3306',
+#             'NAME': 'ecommerce_database',
+#             'USER': 'daniel_admin',
+#             'PASSWORD': PASSWORD_DB,
+#         }
+#     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -133,4 +156,15 @@ STATICFILES_DIRS = [
 ]
 
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+MEDIA_ROOT = BASE_DIR / 'media'
+
+MEDIA_URL = '/media/'
+
+
 CORS_ORIGIN_ALLOW_ALL = True
+

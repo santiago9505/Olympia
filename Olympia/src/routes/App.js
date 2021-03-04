@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Profile from "../pages/Profile/Profile";
 import Address from "../pages/Profile/Address";
 import PaymentMethod from "../pages/PaymentMethod/PaymentMethod";
+import Products from "../components/Products/Products.js"
 
 const App = () => (
   <BrowserRouter>
