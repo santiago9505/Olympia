@@ -15,11 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from productos import views
+from productos import views as product_views
 from django.conf.urls import url
+from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/productos/', views.productos_list),
-    path('api/productos/<str:product_type>', views.productos_filtrados),
+
+    #path productos
+    path('api/productos/', product_views.productos_list),
+    path('api/productos/<str:product_type>', product_views.productos_filtrados),
+
+    #path comentarios
+    path('api/comentarios/comentario_save', product_views.coment_save),
+
+    #path users
+    path('api/users/', user_views.user_list),
+    path('api/users/<str:username>', user_views.users_filtrados),
 ]

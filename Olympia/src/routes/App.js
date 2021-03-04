@@ -9,7 +9,11 @@ import Login from "../pages/Login/Login";
 import Profile from "../pages/Profile/Profile";
 import Address from "../pages/Profile/Address";
 import PaymentMethod from "../pages/PaymentMethod/PaymentMethod";
+<<<<<<< HEAD
 import Checkout from "../pages/Checkout/Checkout";
+=======
+import Products from "../components/Products/Products.js"
+>>>>>>> a7bcfd9ec99154f4307e078a749e2601d02a0e99
 
 const App = () => (
   <BrowserRouter>
