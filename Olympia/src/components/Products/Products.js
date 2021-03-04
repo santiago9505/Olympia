@@ -12,6 +12,7 @@ const Products = () => {
     stok: "",
     img_url: "",
     tag_use: "",
+    coment : []
   });
 
   const fecthData = async () => {
@@ -26,7 +27,7 @@ const Products = () => {
     fecthData();
   }, []);
 
-  return <div>{state}</div>;
+  return <div>{console.log(state)}</div>;
 };
 
 export default Products;

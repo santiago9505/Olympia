@@ -22,12 +22,3 @@ class ProductoSerializer(serializers.ModelSerializer):
 
 
 
-class ProductoDetalleSerializaer(serializers.ModelSerializer):
-
-    coment=ComentarioSerializer(read_only=True)
-
-    class Meta:
-        model = Producto
-        fields = ('pk', 'Name', 'price', 'description', 'stok', 'img_url','tag_use','coment')
-
-
