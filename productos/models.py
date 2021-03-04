@@ -10,7 +10,7 @@ class Producto(models.Model):
 
     stok=models.CharField(max_length=10)
 
-    img_url=models.ImageField(upload_to='productos/images',)
+    img_url=models.ImageField(upload_to='./productos/images',)
 
     product_choices=[
         ('Moda','Productos de Moda'),
@@ -22,7 +22,7 @@ class Producto(models.Model):
     
 
     def __str__(self):
-        return self.name
+        return self.Name
 
 
 class Comentario(models.Model):
