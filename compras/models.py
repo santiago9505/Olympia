@@ -9,7 +9,8 @@ class Compra(models.Model):
     #data of product
 
     product=models.ForeignKey(Producto, related_name='data_product', on_delete=models.CASCADE)
-
+    cantidad=models.IntegerField(max_length=5)
+    
     # description=models.CharField(max_length=255)
     # amount=models.DecimalField(max_digits=14, decimal_places=2)
 
@@ -26,12 +27,11 @@ class Compra(models.Model):
     shippingAddres=models.CharField(max_length=255)
     shippingCity=models.CharField(max_length=50 )
     shippingCountry=models.CharField(max_length=50)
-    currency=models.CharField(max_length=3)
-    signature=models.CharField(max_length=255)
-    tax=models.DecimalField(max_digits=14, decimal_places=2)
-    taxReturnBase=models.DecimalField(max_digits=32,decimal_places=2, default=0)
+    #producto modena
+
     merchanID=models.IntegerField()
-    referenceCode=models.CharField(max_length=255)
+
+    referenceCode=models.IntegerField()
 
 
 

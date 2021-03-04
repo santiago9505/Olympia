@@ -6,6 +6,8 @@ class Producto(models.Model):
 
     price=models.CharField(max_length=10)
 
+    currency=models.CharField(max_length=3, default='USD')
+
     description=models.TextField()
 
     stok=models.CharField(max_length=10)
