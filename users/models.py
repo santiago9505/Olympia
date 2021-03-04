@@ -52,7 +52,7 @@ class Profile(models.Model):
 
     )
 
-    notifications = models.BooleanField()
+    notifications = models.BooleanField(default=True)
 
 
 

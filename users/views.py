@@ -15,14 +15,28 @@ def user_list(request):
         
         
         serializer = UserSerializer(data, context={'request': request}, many=True)
-        print(serializer.data)
+        
         return Response(serializer.data)
 
     elif request.method == 'POST':
+        commited = False
         serializer = UserSerializer(data=request.data)
+        username = request.data["username"]
+        profile_data = request.data["profile"]
+        print(profile_data)
+        # profile_data["user_id"] = user_id 
+        
         if serializer.is_valid():
             serializer.save()
-            return Response(status=status.HTTP_201_CREATED)
+            commited = True
+            if commited:
+                data_uploaded = User.objects.filter(username=username)
+                print(list(data_uploaded))
+                profile_data["user_id"]=data_uploaded["pk"]
+                profile_serializer = ProfileSerializer(data=profile_data)
+                profile_serializer.save()
+            # profile_serializer.save()
+                return Response(status=status.HTTP_201_CREATED)
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -40,3 +54,5 @@ def users_filtrados(request,username):
             serializer =UserSerializer(data, context={'request': request}, many=True)
 
             return Response(serializer.data)
+
+
