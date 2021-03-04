@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 
 from rest_framework.response import Response
@@ -15,13 +16,26 @@ def user_list(request):
         
         
         serializer = UserSerializer(data, context={'request': request}, many=True)
-        print(serializer.data)
+        
         return Response(serializer.data)
 
     elif request.method == 'POST':
+        commited = False
         serializer = UserSerializer(data=request.data)
+        username = request.data["username"]
+        profile_data = request.data.pop("profile")
+        
+        
         if serializer.is_valid():
-            serializer.save()
+            user = User.objects.create_user(**request.data)
+            profile = Profile(user=user)
+            profile_data["user_id"] = int(user.pk)
+            profile_serializer = ProfileSerializer(data=profile_data)
+            
+            if profile_serializer.is_valid():
+                
+                profile_serializer.save()
+                
             return Response(status=status.HTTP_201_CREATED)
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -40,3 +54,5 @@ def users_filtrados(request,username):
             serializer =UserSerializer(data, context={'request': request}, many=True)
 
             return Response(serializer.data)
+
+
