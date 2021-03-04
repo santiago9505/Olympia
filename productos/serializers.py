@@ -11,6 +11,12 @@ class ComentarioSerializer(serializers.ModelSerializer):
         model = Comentario
         fields = ('user','producto','texto','date')
 
+class SaveProductoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Producto
+        fields = ('Name', 'price', 'description', 'stok', 'img_url','tag_use')
+
 
 class ProductoSerializer(serializers.ModelSerializer):
     coment=ComentarioSerializer(read_only=True, many=True)
