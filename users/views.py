@@ -20,21 +20,21 @@ def user_list(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        commited = False
+        # commited = False
         serializer = UserSerializer(data=request.data)
-        username = request.data["username"]
+        # username = request.data["username"]
         profile_data = request.data.pop("profile")
         
         
         if serializer.is_valid():
             user = User.objects.create_user(**request.data)
-            profile = Profile(user=user)
-            profile_data["user_id"] = int(user.pk)
+            
+            
             profile_serializer = ProfileSerializer(data=profile_data)
             
             if profile_serializer.is_valid():
-                
-                profile_serializer.save()
+                profile = Profile(user=user, **profile_data)
+                profile.save()
                 
             return Response(status=status.HTTP_201_CREATED)
             
