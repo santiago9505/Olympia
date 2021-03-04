@@ -5,20 +5,12 @@ from rest_framework import status
 from .models import Producto
 from .serializers import *
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 def productos_list(request):
     if request.method == 'GET':
         data = Producto.objects.all()
         serializer =ProductoSerializer(data, context={'request': request}, many=True)
         return Response(serializer.data)
-
-    elif request.method == 'POST':
-        serializer = ProductoSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(status=status.HTTP_201_CREATED)
-            
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
@@ -34,14 +26,13 @@ def productos_filtrados(request,product_type):
             return Response(serializer.data)
 
 
-@api_view(['GET'])
-def producto_detalle(request):
-        if request.method=='GET':
-            try:
-                data = Producto.objects.all()
-            except Producto.DoesNotExist:
-                return Response(status=status.HTTP_404_NOT_FOUND)
+@api_view(['POST'])
+def coment_save(resquest):
+    if resquest.method=='POST':
+        serializer=ComentarioSerializer(data=resquest.data)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
 
-            serializer =ProductoDetalleSerializer(data, context={'request': request}, many=True)
-
-            return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
