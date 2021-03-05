@@ -11,30 +11,31 @@ from .serializers import *
 
 @api_view(['GET', 'POST'])
 def user_list(request):
+
     if request.method == 'GET':
         data = User.objects.all()
         
         
-        serializer = UserSerializer(data, context={'request': request}, many=True)
+        serializer = UserCreateSerializer(data, context={'request': request}, many=True)
         
         return Response(serializer.data)
 
     elif request.method == 'POST':
         # commited = False
-        serializer = UserSerializer(data=request.data)
+        serializer = UserCreateSerializer(data=request.data)
         # username = request.data["username"]
         profile_data = request.data.pop("profile")
         
         
         if serializer.is_valid():
             user = User.objects.create_user(**request.data)
-            
-            
-            profile_serializer = ProfileSerializer(data=profile_data)
+            profile_serializer = ProfileCreateSerializer(data=profile_data)
             
             if profile_serializer.is_valid():
                 profile = Profile(user=user, **profile_data)
                 profile.save()
+
+
                 
             return Response(status=status.HTTP_201_CREATED)
             
@@ -43,7 +44,7 @@ def user_list(request):
 
 
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def users_filtrados(request,username):
         if request.method=='GET':
             try:
@@ -51,8 +52,23 @@ def users_filtrados(request,username):
             except User.DoesNotExist:
                 return Response(status=status.HTTP_404_NOT_FOUND)
 
-            serializer =UserSerializer(data, context={'request': request}, many=True)
+            serializer=UserCreateSerializer(data, context={'request': request}, many=True)
 
             return Response(serializer.data)
+
+        if request.method == 'POST':
+            try:
+                data = User.objects.filter(username=username)
+            except User.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            
+            profile = Profile.Objects.filter(user_id=data.pk)
+            serializer_profile = ProfileCreateSerializer(data=request.data)
+
+
+
+            
+
+            
 
 

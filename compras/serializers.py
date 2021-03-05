@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Compra
 
-from users.serializers import UserSerializer
+from users.serializers import UserCreateSerializer
 from users.serializers import UserCompraSerializer
 from productos.serializers import ProductoCompraSerializer
 
