@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 //Libs
-import ArbolIcon from "../../assets/static/arbol-icon.svg";
+import ArbolIcon from "../../assets/static/logo.png";
 import LupaIcon from "../../assets/static/lupa.svg";
-import { FiShoppingCart, FiMenu } from "react-icons/fi";
+import { FiShoppingCart, FiMenu, FiSearch } from "react-icons/fi";
 import { FaGifts, FaHeart } from "react-icons/fa";
 import { HiFire } from "react-icons/hi";
 import { BsPeopleCircle } from "react-icons/bs";
@@ -35,21 +35,17 @@ const Navbar = () => {
           state.toggleLateralMenu.isOpen ? "sticky top-0" : "relative"
         } px-1 h-14 top-0 z-50 grid grid-cols-12 bg-background_principal w-full col-span-12 justify-items-center place-content-center pr-4 md:gap-2`}
       >
-        <article className="col-span-2">
-          <Link to="/home">
-            <img className="w-4/6 mx-2" src={ArbolIcon} alt="Logo" />
+        <article className="col-span-2 text-white text-lg font-bold md:text-2xl xl:text-3xl mx-5">
+          <Link className="h-full overflow-hidden" to="/home">
+            <h1 className="">Bircor</h1>
           </Link>
         </article>
         <section className="relative flex col-span-10 w-full md:col-span-8 xl:col-span-7">
           <input
-            className="w-full h-8 rounded-full px-3 focus:outline-none"
+            className="w-full h-7 rounded-full px-3 focus:outline-none md:h-8"
             type="text"
           />
-          <img
-            className="absolute right-6 w-8 border-l-2 p-1"
-            src={LupaIcon}
-            alt="Hojita"
-          />
+          <FiSearch className="cursor-pointer border_green h-full absolute right-3 w-8 border-l-2 p-1 text-3xl" />
         </section>
         <section className="hidden col-span-1 md:block">
           <div>
@@ -76,7 +72,7 @@ const Navbar = () => {
           </div>
         </section>
       </div>
-      <section className="flex justify-center">
+      <section className="flex justify-center hidden">
         <ul className="hidden xl:flex justify-between w-1/2 p-4">
           <MenuItem Icon={HiFire} text="Ofertas" />
           <MenuItem Icon={FaGifts} text="Tarjetas de regalo" />

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .border_green {
+    border-left: 4px solid #065f46;
+  }
+
   * {
     outline: none !important;
   }
@@ -73,5 +77,8 @@
   }
   .snap-start {
     scroll-snap-align: start;
+  }
+  .icons-color {
+    color: #f9fbf9;
   }
 }
