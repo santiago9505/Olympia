@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const data = [
   {
+    id: '1',
     name: 'Toallitas Húmedas Biodegradables',
     price: '144900',
     description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
@@ -12,6 +13,7 @@ const data = [
     tag_use: 'Limpieza',
   },
   {
+    id: '2',
     name: 'Toallitas Húmedas Biodegradables',
     price: '144900',
     description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
@@ -20,6 +22,7 @@ const data = [
     tag_use: 'Limpieza',
   },
   {
+    id: '3',
     name: 'Toallitas Húmedas Biodegradables',
     price: '144900',
     description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
@@ -28,6 +31,7 @@ const data = [
     tag_use: 'Limpieza',
   },
   {
+    id: '4',
     name: 'Toallitas Húmedas Biodegradables',
     price: '144900',
     description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
@@ -36,6 +40,7 @@ const data = [
     tag_use: 'Limpieza',
   },
   {
+    id: '5',
     name: 'Toallitas Húmedas Biodegradables',
     price: '144900',
     description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
@@ -45,11 +50,12 @@ const data = [
   },
 ];
 
-const Products = () => {
+// Aqui se filtran los productos por medio del parametro pasado por params
+const Products = ({ match: { params: { category } } }) => {
   return (
     <div className="mb-20 p-4">
       <div className="text-2xl underline mb-8">
-        <h1>Category</h1>
+        <h1>{category}</h1>
       </div>
       <section className="grid grid-cols-2 auto-rows-auto gap-4 md:grid-cols-3 md:w-3/5 md:m-auto">
         {
