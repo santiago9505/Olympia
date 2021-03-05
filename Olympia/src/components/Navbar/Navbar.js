@@ -29,8 +29,12 @@ const Navbar = () => {
   };
 
   return (
+    <div>
       <div
-        <div className={`${state.toggleLateralMenu.isOpen ? 'sticky top-0': 'relative'} px-1 h-12 top-0 z-50 grid grid-cols-12 bg-background_principal w-full col-span-12 justify-items-center place-content-center pr-4 md:gap-2`}>
+        className={`${
+          state.toggleLateralMenu.isOpen ? "sticky top-0" : "relative"
+        } px-1 h-12 top-0 z-50 grid grid-cols-12 bg-background_principal w-full col-span-12 justify-items-center place-content-center pr-4 md:gap-2`}
+      >
         <article className="col-span-2">
           <Link to="/home">
             <img className="w-4/6 mx-2" src={ArbolIcon} alt="Logo" />
@@ -80,7 +84,7 @@ const Navbar = () => {
         </ul>
       </section>
       <LateralMenu isOpen={state.toggleLateralMenu.isOpen} />
-    </>
+    </div>
   );
 };
 
