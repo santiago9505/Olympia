@@ -1,4 +1,9 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
+//Libs
+import { categories } from '../../constants/categories';
+
 
 const Categories = () => {
   return (
@@ -7,22 +12,15 @@ const Categories = () => {
         Categorías
       </h1>
       <section className="grid grid-cols-2 justify-items-center gap-4 mt-6 mx-4 font-bold xl:text-2xl xl:text-center xl:gap-20 xl:mt-14">
-        <article className="border-2 w-11/12 max-w-sm border-black p-1 rounded-lg">
-          <input className="m-1" type="checkbox" name="transporte" value="1" />
-          {"  "}Nombre Categoría
-        </article>
-        <article className="border-2 w-11/12 max-w-sm border-black p-1 rounded-lg">
-          <input className="m-1" type="checkbox" name="transporte" value="2" />
-          {"  "}Nombre Categoría
-        </article>
-        <article className="border-2 w-11/12 max-w-sm border-black p-1 rounded-lg">
-          <input className="m-1" type="checkbox" name="transporte" value="3" />
-          {"  "}Nombre Categoría
-        </article>
-        <article className="border-2 w-11/12 max-w-sm border-black p-1 rounded-lg">
-          <input className="m-1" type="checkbox" name="transporte" value="4" />
-          {"  "}Nombre Categoría
-        </article>
+        {
+         categories.map(({ category }, i) => (
+          <article key={i} className="border-2 w-11/12 max-w-sm border-black p-1 rounded-lg">
+            <Link to={`/products/${category}`} className="block w-full">
+              {category}
+            </Link>
+          </article>
+         ))
+        }
       </section>
     </div>
   );
