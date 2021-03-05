@@ -76,7 +76,7 @@ const Navbar = () => {
           </div>
         </section>
       </div>
-      <section className="flex justify-center">
+      <section className="flex justify-center hidden">
         <ul className="hidden xl:flex justify-between w-1/2 p-4">
           <MenuItem Icon={HiFire} text="Ofertas" />
           <MenuItem Icon={FaGifts} text="Tarjetas de regalo" />
