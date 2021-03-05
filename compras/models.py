@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from users.models import Profile
 from productos.models import Producto
+import uuid
 # Create your models here.
 
 class Compra(models.Model):
@@ -23,9 +24,8 @@ class Compra(models.Model):
 
     #producto modena
 
-    merchanID=models.IntegerField(default=12345)
-
-    referenceCode=models.CharField(max_length=30, default='esteesuncodigode')
+    merchanID=models.IntegerField(default=921610)
+    referenceCode=models.UUIDField(default=uuid.uuid4,editable=False)
 
 
 
