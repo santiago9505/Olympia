@@ -11,8 +11,9 @@ import MenuItem from "./MenuItem";
 const Categories = () => {
   return (
     <ul className=" grid grid-cols-2 grid-rows-2 gap-4">
-      {categories.map((item) => (
+      {categories.map((item, i) => (
         <MenuItem
+          key={i}
           Icon={BsCircle}
           text={item.category}
           type="categories"

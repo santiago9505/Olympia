@@ -19,7 +19,7 @@ const Main = () => {
       <Categoria2 />
       <Categoria3 />
       <Categoria4 />
-      <Associates />
+      <Associates title="Aliados"/>
       <Others />
     </div>
   );
