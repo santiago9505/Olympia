@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 //Libs
 import { categories } from '../../constants/categories';
 
-
 const Categories = () => {
   return (
     <div className="col-span-12">
