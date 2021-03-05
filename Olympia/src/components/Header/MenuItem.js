@@ -32,7 +32,7 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
             <Icon />
           </span>
         )}
-        <span className="text-2xl">{text}</span>
+        <span className="text-xl">{text}</span>
         {Icon2 && (
           <span className="inline-block ml-1 icons-color">
             <Icon2 />
