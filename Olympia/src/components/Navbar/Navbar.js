@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 //Libs
-import ArbolIcon from "../../assets/static/logo.png";
+
 import LupaIcon from "../../assets/static/lupa.svg";
 import { FiShoppingCart, FiMenu, FiSearch } from "react-icons/fi";
 import { FaGifts, FaHeart } from "react-icons/fa";
