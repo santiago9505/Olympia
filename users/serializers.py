@@ -15,7 +15,23 @@ class ProfileCreateSerializer(serializers.ModelSerializer):
             'user_id',
             'birthday',
             'gender',
-            'notifications'
+            'notifications',
+            'phone_number',
+            'credit_card',
+            'phone_prefix', 
+            'phone_number',
+            'picture',
+            'address_nickname',
+            'address_name',
+            'address_1',
+            'address_2',
+            'city',
+            'zip_code',
+            'country',
+            'state',
+            'default_shipping_address',
+            'shippingAddres'
+
         )
 
 """Serializer del modelo User usado para crear los datos de perfil en la db"""
