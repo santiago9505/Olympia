@@ -76,7 +76,7 @@ const Shopping = () => {
         <div className="xl:block">
           {state.products.length !== 0 &&
             state.products.map((item) => (
-              <div className="grid grid-cols-2 w-full justify-items-center pb-8 align-items-center my-16 gap-2 border-b-4 md:flex md:justify-center md:w-11/12 md:gap-10 xl:border-b-4">
+              <div className="grid grid-cols-3 w-full justify-items-center pb-8 align-items-center my-16 gap-2 border-b-4 md:flex md:justify-center md:w-11/12 md:gap-10 xl:border-b-4">
                 <div className="w-4/6 md:w-3/6 flex justify-start">
                   <article className="rounded-2xl w-28 h-24 xl:w-auto">
                     <img
@@ -100,7 +100,7 @@ const Shopping = () => {
                     </label>
                   </article>
                 </div>
-                <div className="w-5/6 md:w-6/12 md:mb-4 xl:h-60 ">
+                <div className="col-span-2 full md:w-6/12 md:mb-4 xl:h-60 ">
                   <article className="block text-xl justify-between md:flex md:block xl:text-3xl xl:mb-6">
                     <h2 className="">{item.name}</h2>
                     <h2 className="self-end">${item.price}</h2>
