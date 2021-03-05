@@ -2,15 +2,17 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class Producto(models.Model):
-    Name=models.CharField(max_length=50)
+    name=models.CharField(max_length=50)
 
     price=models.CharField(max_length=10)
+
+    currency=models.CharField(max_length=3, default='USD')
 
     description=models.TextField()
 
     stok=models.CharField(max_length=10)
 
-    img_url=models.ImageField(upload_to='productos/images',)
+    img_url=models.ImageField(upload_to='./productos/images',)
 
     product_choices=[
         ('Moda','Productos de Moda'),
@@ -33,4 +35,12 @@ class Comentario(models.Model):
     date=models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.texto
+
+
+class Cupones(models.Model):
+
+    cupon_name=models.CharField(max_length=10)
+    descuento=models.DecimalField(max_digits=5,decimal_places=2, default=0.00)
+
+

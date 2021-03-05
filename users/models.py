@@ -13,6 +13,8 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
 
+    credit_card = models.CharField(max_length=16, blank=True)
+
     phone_prefix_choices = [
         ('+52', 'MX'),
         ('+57', 'CO'),
@@ -52,9 +54,21 @@ class Profile(models.Model):
 
     )
 
-    notifications = models.BooleanField()
+    notifications = models.BooleanField(default=True)
 
+    address_nickname = models.CharField(max_length=100, blank=True)
+    address_name = models.CharField(max_length=100, blank=True)
+    address_1 = models.CharField(max_length=100, blank=True)
+    address_2 = models.CharField(max_length=100, blank=True)
+    city = models.CharField(max_length=100, blank=True)
+    zip_code = models.CharField(max_length=100, blank=True)
+    country = models.CharField(max_length=100, blank=True)
+    state = models.CharField(max_length=100, blank=True)
+    default_shipping_address = models.BooleanField(default=True)
 
+    shippingAddres=models.CharField(max_length=255, blank=True)
+
+    
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)

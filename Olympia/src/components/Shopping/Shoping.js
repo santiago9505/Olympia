@@ -72,13 +72,13 @@ const Shopping = () => {
       <article className="text-center text-2xl font-bold md:pt-10 md:border-b-4 md:pb-8 xl:text-4xl xl:border-b-6">
         <h1>Carrito de compras</h1>
       </article>
-      <div className="xl:flex xl:justify-between px-12 xl:mt-10">
+      <div className="xl:flex xl:justify-between xl:mt-10">
         <div className="xl:block">
           {state.products.length !== 0 &&
             state.products.map((item) => (
-              <div className="grid grid-cols-4 my-16 gap-2 border-b-4 p-4 md:flex md:justify-center md:gap-10 xl:border-b-4 ">
-                <div className="">
-                  <article className="rounded-2xl w-24 h-24 xl:w-auto">
+              <div className="grid grid-cols-3 w-full justify-items-center pb-8 align-items-center my-16 gap-2 border-b-4 md:flex md:justify-center md:w-11/12 md:gap-10 xl:border-b-4">
+                <div className="w-4/6 md:w-3/6 flex justify-start">
+                  <article className="rounded-2xl w-28 h-24 xl:w-auto">
                     <img
                       className="border-2 rounded-xl rounded-xl p-1 w-20 h-20 xl:w-40 xl:h-40"
                       src={item.img_url}
@@ -100,12 +100,12 @@ const Shopping = () => {
                     </label>
                   </article>
                 </div>
-                <div className="col-span-3 md:w-5/12 md:mb-4 xl:h-60 ">
-                  <article className="text-xl flex gap-24 md:block xl:text-3xl xl:mb-6">
+                <div className="col-span-2 full md:w-6/12 md:mb-4 xl:h-60 ">
+                  <article className="block text-xl justify-between md:flex md:block xl:text-3xl xl:mb-6">
                     <h2 className="">{item.name}</h2>
                     <h2 className="self-end">${item.price}</h2>
                   </article>
-                  <article className="text-xs w-11/12 md:w-9/12 xl:text-base">
+                  <article className="text-xs w-full md:w-9/12 xl:text-base">
                     <h2>{item.description}</h2>
                   </article>
                   <article

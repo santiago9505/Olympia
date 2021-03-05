@@ -18,6 +18,7 @@ from django.urls import path, re_path
 from productos import views as product_views
 from django.conf.urls import url
 from users import views as user_views
+from compras import views as compras_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,4 +33,9 @@ urlpatterns = [
     #path users
     path('api/users/', user_views.user_list),
     path('api/users/<str:username>', user_views.users_filtrados),
+
+    # path compras
+    path('api/compra/generar_compra', compras_views.create_ord_compra),
+    path('api/compra/generar_compra/<int:user_id>', compras_views.data_compra),
+    
 ]
