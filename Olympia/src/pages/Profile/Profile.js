@@ -7,8 +7,8 @@ import { MdModeEdit } from "react-icons/md";
 
 const Profile = () => {
   return (
-    <div className="flex flex-col gap-4 mb-16 p-4 pb-20 items-center">
-      <div className="text-center text-2xl border-b-2 pb-2 px-2 xl:text-4xl pb-6 font-bold">
+    <div className="bg-white flex flex-col gap-4 mb-16 p-5 pb-20 items-center">
+      <div className="text-center text-3xl border-b-2 mt-5 px-2 xl:text-4xl pb-6">
         <h1>Personal Information</h1>
       </div>
       <div className="w-11/12 flex flex-col items-center">
@@ -16,8 +16,8 @@ const Profile = () => {
           <MdModeEdit className="inline" />
         </span>
         <form className="flex flex-col xl:w-full">
-          <div className="flex mb-5 xl:w-6/12 xl:self-center">
-            <figure className="w-24 h-24 rounded-full bg-gray-500 mr-4 xl:w-40 xl:h-40">
+        <div className="flex mb-5 xl:w-6/12 xl:self-center">
+            <figure className="w-32 h-32 rounded-full bg-gray-500 mr-4 xl:w-40 xl:h-40">
               <img className="" src="" alt="profile image" />
             </figure>
             <div className="flex-1 text-lg gap-10">
@@ -25,13 +25,13 @@ const Profile = () => {
                 type="text"
                 name="name"
                 defaultValue="Nombre Nombre"
-                className="block w-full mb-3"
+                className="block mt-5 bg-white text-2xl text-black w-full mb-3"
               />
               <input
                 type="text"
                 name="name"
                 defaultValue="Rango semillero 1"
-                className="block w-full"
+                className="block bg-white text-2xl text-black w-full"
               />
             </div>
           </div>
@@ -39,7 +39,7 @@ const Profile = () => {
             <div className="flex flex-col items-center w-full max-w-sm xl:text-2xl">
               <label
                 htmlFor="email"
-                className="text-xs text-center xl:text-2xl xl:my-2"
+                className="text-base text-principal_gray self-start xl:text-2xl xl:my-2"
               >
                 Email address *
               </label>
@@ -47,12 +47,13 @@ const Profile = () => {
                 type="text"
                 id="email"
                 defaultValue="name@name.com"
-                className="border-b-2 border-gray-500 w-full mb-3 text-center"
+                className="w-full mb-3 bg-white text-start"
               />
+              <p className="relative bottom-6 self-start border-b-4 rounded my-4 w-60 border-principal_blue"></p>
               <div className="flex flex-col items-center w-full max-w-sm xl:text-2xl xl:my-2">
                 <label
                   htmlFor="password"
-                  className="text-xs text-center xl:text-2xl"
+                  className="text-base text-principal_gray self-start xl:text-2xl xl:my-2"
                 >
                   Password *
                 </label>
@@ -60,33 +61,29 @@ const Profile = () => {
                   type="password"
                   id="password"
                   defaultValue="**********"
-                  className="border-b-2 border-gray-500 w-full text-center"
+                  className="w-full mb-3 bg-white text-start"
                 />
+                <p className="relative bottom-6 self-start border-b-4 rounded my-4 w-60 border-principal_blue"></p>
               </div>
             </div>
           </div>
-
-          <span className="block text-right text-lg text-gray-500 mt-4">
-            <MdModeEdit className="inline" />
-          </span>
-
-          <div className="text-2xl text-center mb-4 my-20 xl:text-4xl xl:font-semibold">
+          <div className="text-3xl text-black text-center mb-4 my-2 xl:text-4xl xl:font-semibold">
             <h2>Contact</h2>
           </div>
 
           <div className="flex flex-col mb-4 items-center">
-            <div className="flex flex-col items-center w-full max-w-lg xl:text-xl">
+            <div className="flex flex-col items-start w-full max-w-lg xl:text-xl">
               <label
                 htmlFor="idNumber"
-                className="block text-xs mb-1 text-center xl:text-2xl"
+                className="block text-base mb-1 text-center xl:text-2xl"
               >
                 Identification number
               </label>
-              <div className="relative flex border-b-2 border-gray-500 w-3/5 mb-3 ">
+              <div className="relative flex w-3/5 mb-3 ">
                 <select
                   name="docType"
                   id="docType"
-                  className="absolute -bottom-0.5 border-2 border-gray-500 rounded-full"
+                  className="absolute -bottom-0.5 border-4 border-principal_blue rounded-full"
                 >
                   <option value="cc">C.C</option>
                   <option value="ti">TI</option>
@@ -96,22 +93,23 @@ const Profile = () => {
                   id="idNumber"
                   name="idNumber"
                   defaultValue="1010101010"
-                  className="block ml-14 w-full"
+                  className="block bg-white ml-14 w-full"
                 />
+                <p className="absolute left-3 top-1.5 self-start border-b-4 rounded my-4 w-full border-principal_blue"></p>
               </div>
             </div>
-            <div className="flex flex-col items-center w-full max-w-lg xl:text-xl">
+            <div className="flex flex-col items-start w-full max-w-lg xl:text-xl">
               <label
                 htmlFor="phoneNumber"
-                className="block text-xs mb-1 xl:text-2xl"
+                className="block text-base mb-1 text-center xl:text-2xl"
               >
                 Phone number
               </label>
-              <div className="relative flex border-b-2 border-gray-500 w-3/5 mb-3">
+              <div className="relative flex w-3/5 mb-3">
                 <select
                   name="numberCode"
                   id="numberCode"
-                  className="absolute -bottom-0.5 border-2 border-gray-500 rounded-full"
+                  className="absolute -bottom-0.5 border-4 border-principal_blue rounded-full"
                 >
                   <option value="col">COL</option>
                   <option value="us">US</option>
@@ -121,8 +119,9 @@ const Profile = () => {
                   id="phoneNumber"
                   name="phoneNumber"
                   defaultValue="3010101010"
-                  className="block ml-16 w-full"
+                  className="block bg-white ml-16 w-full"
                 />
+                <p className="absolute left-3 top-1.5 self-start border-b-4 rounded my-4 w-full border-principal_blue"></p>
               </div>
             </div>
           </div>
@@ -130,22 +129,22 @@ const Profile = () => {
             <input
               type="submit"
               value="Send"
-              className="w-2/5 py-0.5 m-auto mb-1 rounded-full text-base border-2 border-gray-400 bg-white active:bg-gray-400"
+              className="w-2/5 py-0.5 m-auto mb-1 rounded-full text-base border-4 border-principal_blue bg-white active:bg-gray-400"
             />
           </div>
         </form>
       </div>
       <div>
-        <div className="flex justify-between">
+        <div className="flex gap-16">
           <button
             type="button"
-            className="p-0.5 px-3 mb-1 rounded-full text-base border-2 border-gray-400 bg-white active:bg-gray-400 xl:hidden"
+            className="p-0.5 px-3 mb-1 rounded-full text-base border-2 border-4 border-principal_blue bg-white active:bg-gray-400 xl:hidden"
           >
             <Link to="/profile/address">Residence address</Link>
           </button>
           <button
             type="button"
-            className="p-0.5 px-3 mb-1 rounded-full text-base border-2 border-gray-400 bg-white active:bg-gray-400 xl:hidden"
+            className="p-0.5 px-3 mb-1 rounded-full text-base border-4 border-principal_blue bg-white active:bg-gray-400 xl:hidden"
           >
             <Link to="/payment-method">Payment method</Link>
           </button>

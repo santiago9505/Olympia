@@ -14,7 +14,6 @@ const Categories = () => {
       {categories.map((item, i) => (
         <MenuItem
           key={i}
-          Icon={BsCircle}
           text={item.category}
           type="categories"
           url={`/products/${item.category}`}
