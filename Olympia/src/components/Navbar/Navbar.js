@@ -48,7 +48,9 @@ const Navbar = () => {
       <section className="hidden col-span-1 md:block">
         <div>
           <button className="border-none outline-none text-3xl">
-            <FiShoppingCart/>
+            <Link to="/checkout" className="w-full">
+              <FiShoppingCart/>
+            </Link>
           </button>
         </div>
       </section>

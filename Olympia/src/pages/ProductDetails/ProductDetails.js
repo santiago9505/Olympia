@@ -4,8 +4,13 @@ import React from 'react';
 //Libs
 import { FiShoppingCart, FiShoppingBag, FiMinus } from 'react-icons/fi';
 import { GrFormAdd } from 'react-icons/gr';
+import { addToCart, addtoCart } from '../../constants/Cart';
 
 const ProductDetails = ({ history: { location: { state: { item } } } }) => {
+  const handleAddToCart = () => {
+    addToCart(item);
+  }
+
   return(
     <div className="mb-20 w-full">
       <figure className="w-full h-48 overflow-hidden md:h-60">
@@ -25,7 +30,7 @@ const ProductDetails = ({ history: { location: { state: { item } } } }) => {
                 <FiMinus/>
               </button>
             </div>
-            <button className="flex border border-gray-400 p-1 rounded-md mr-3">
+            <button className="flex border border-gray-400 p-1 rounded-md mr-3" onClick={handleAddToCart}>
               <span className="text-sm mr-1">Cart</span>
               <FiShoppingCart/>
             </button>
