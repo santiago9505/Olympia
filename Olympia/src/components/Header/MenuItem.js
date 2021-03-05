@@ -7,7 +7,7 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
 
   switch(type){
     case 'categories':
-      classList = 'justify-center bg-white rounded-md p-2';
+      classList = ' justify-center items-center bg-background_principal rounded-md p-2 font-bold ';
       break;
 
     case 'options':
