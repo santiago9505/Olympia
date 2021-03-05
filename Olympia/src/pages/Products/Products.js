@@ -67,7 +67,7 @@ const Products = ({
 }) => {
   return (
     <div className="mb-20 p-4">
-      <div className="text-2xl underline mb-8">
+      <div className="text-2xl text-black underline mb-8">
         <h1>{category}</h1>
       </div>
       <section className="grid grid-cols-2 auto-rows-auto gap-4 md:grid-cols-3 md:w-3/5 md:m-auto">
