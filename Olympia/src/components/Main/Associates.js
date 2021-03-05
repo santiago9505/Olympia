@@ -9,9 +9,10 @@ import aliado4 from "../../assets/static/aliado4.png";
 const Associates = ({ title }) => {
   return (
     <div className="mt-6">
-      <h1 className="text-3xl font-bold underline m-2 text-center text-black">
+      <h1 className="text-3xl font-bold m-2 text-start text-black">
         {title}
       </h1>
+      <p className="relative bottom-2 left-2 self-start border-b-4 rounded w-28 border-principal_blue"></p>
       <section className="flex overflow-x-auto scroll mt-4 m-2 gap-2 md:h-80">
         <article className="border-4 border-principal_blue rounded-3xl h-60 text-center md:h-72 md:max-w-md bg-white">
           <img
