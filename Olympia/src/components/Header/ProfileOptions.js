@@ -23,7 +23,7 @@ const ProfileOptions = () => {
         <MenuItem Icon={HiFire} text="Ofertas"/>
         <MenuItem Icon={FaHeart} text="Favoritos"/>
         <MenuItem Icon={FaHistory} text="Historial"/>
-        <MenuItem Icon={RiProfileLine} text="my profile -- *only development*" url="/profile"/>
+        <MenuItem Icon={RiProfileLine} text="my profile" url="/profile"/>
         <MenuItem Icon={MdHome} text="Home" url="/home"/>
       </ul>
       <hr className="my-3 mx-auto w-3/4 border-t-2 border-gray-700" />

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 //Libs
 import { categories } from "../../constants/categories";
+import { IoIosLeaf } from 'react-icons/io';
 
 const Categories = () => {
   return (
@@ -14,8 +15,9 @@ const Categories = () => {
         {categories.map(({ category }, i) => (
           <article
             key={i}
-            className="border-2 w-11/12 max-w-sm border-black p-1 rounded-lg"
+            className="flex items-center border-2 w-11/12 max-w-sm border-black p-1 rounded-lg"
           >
+            <IoIosLeaf/>
             <Link to={`/products/${category}`} className="block w-full">
               {category}
             </Link>

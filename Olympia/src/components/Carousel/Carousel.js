@@ -1,7 +1,7 @@
 import React from "react";
-import Imagen1 from "../../assets/static/imagen-1.jpg";
-import Imagen2 from "../../assets/static/imagen-2.jpg";
-import Imagen3 from "../../assets/static/imagen-3.jpg";
+import Imagen1 from "../../assets/static/imagen-1.jpeg";
+// import Imagen2 from "../../assets/static/imagen-2.jpg";
+// import Imagen3 from "../../assets/static/imagen-3.jpg";
 
 const Carousel = () => {
   return (
@@ -11,10 +11,10 @@ const Carousel = () => {
           <img src={Imagen1} alt="" />
         </li>
         <li>
-          <img src={Imagen2} alt="" />
+          <img src={Imagen1} alt="" />
         </li>
         <li>
-          <img src={Imagen3} alt="" />
+          <img src={Imagen1} alt="" />
         </li>
       </ul>
     </div>

@@ -54,12 +54,12 @@ const Header = () => {
 
   return (
 
-    <header className="block absolute bottom-0 z-50 w-full shadow-custom bg-background_principal md:hidden">
+    <header className="block fixed bottom-0 z-50 w-full shadow-custom bg-background_principal md:hidden">
       <div className="flex flex-row justify-between items-center p-2">
         <div>
           <div
             role="button"
-            className="text-4xl"
+            className="text-4xl text-red-500"
             onClick={() => {
               toggleMenu("categories");
             }}
