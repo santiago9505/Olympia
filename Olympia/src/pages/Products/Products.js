@@ -75,7 +75,7 @@ const Products = ({
         {data.map((item, i) => (
           <article
             key={i}
-            className="flex flex-col items-center p-2.5 shadow-products rounded-2xl h-auto md:h-52"
+            className="flex flex-col items-center p-2.5 shadow-products rounded-2xl h-auto"
           >
             <figure className="flex justify-center">
               <img
