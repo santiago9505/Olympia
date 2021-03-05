@@ -1,66 +1,6 @@
-import React, { useState, useEffect } from "react";
-
-const data = [
-  {
-    name: 'Toallitas Húmedas Biodegradables',
-    price: '144900',
-    description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
-    stok: '2',
-    img_url: 'https://http2.mlstatic.com/D_NQ_NP_920698-MCO43961669942_102020-O.webp',
-    tag_use: 'Limpieza',
-  },
-  {
-    name: 'Toallitas Húmedas Biodegradables',
-    price: '144900',
-    description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
-    stok: '2',
-    img_url: 'https://http2.mlstatic.com/D_NQ_NP_920698-MCO43961669942_102020-O.webp',
-    tag_use: 'Limpieza',
-  },
-  {
-    name: 'Toallitas Húmedas Biodegradables',
-    price: '144900',
-    description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
-    stok: '2',
-    img_url: 'https://http2.mlstatic.com/D_NQ_NP_920698-MCO43961669942_102020-O.webp',
-    tag_use: 'Limpieza',
-  },
-  {
-    name: 'Toallitas Húmedas Biodegradables',
-    price: '144900',
-    description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
-    stok: '2',
-    img_url: 'https://http2.mlstatic.com/D_NQ_NP_920698-MCO43961669942_102020-O.webp',
-    tag_use: 'Limpieza',
-  },
-  {
-    name: 'Toallitas Húmedas Biodegradables',
-    price: '144900',
-    description: 'Paquete de 4 toallitas de ducha grandes sin enjuague para después del entrenamiento, camping, mochilero, al aire libre y senderismo',
-    stok: '2',
-    img_url: 'https://http2.mlstatic.com/D_NQ_NP_920698-MCO43961669942_102020-O.webp',
-    tag_use: 'Limpieza',
-  },
-];
+import React from "react";
 
 const Categoria1 = () => {
-  const [state, setState] = useState({
-    name: '',
-    price: '',
-    description: '',
-    stok: '',
-    img_url: '' ,
-    tag_use: '',
-  });
-
-  const fetchData = async () => {
-    //Async code here
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
     <section className="hidden xl:block xl:h-11/12">
       <h1 className="text-3xl font-bold underline m-2 md:pl-5 xl:ml-20">
