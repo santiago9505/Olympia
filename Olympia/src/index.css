@@ -4,7 +4,7 @@
 
 @layer utilities {
   .border_green {
-    border-left: 4px solid #065F46;
+    border-left: 4px solid #065f46;
   }
 
   * {
@@ -77,5 +77,8 @@
   }
   .snap-start {
     scroll-snap-align: start;
+  }
+  .icons-color {
+    color: #f9fbf9;
   }
 }
