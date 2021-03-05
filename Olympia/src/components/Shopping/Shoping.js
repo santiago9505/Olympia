@@ -7,7 +7,7 @@ import { getCart, getTotal, deleteItem } from '../../constants/Cart';
 import { MdDelete } from 'react-icons/md';
 
 const Shopping = () => {
-  const referenceCode = '8';
+  const referenceCode = '9';
 
   const [state, setState] = useState({
     products: getCart(),
