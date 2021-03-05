@@ -13,13 +13,14 @@ const Shopping = () => {
     products: getCart(),
     payment: paymentData,
     user: {
-      name: "Juan Camilo Molina",
-      email: "josedanielmolina323@gmail.com",
-      address: "carrera 13a #23-05",
-      city: "Candelaria - villagorgona",
-      zipCode: "763579",
-      telephone: "3185676175",
+      name: "Payer Gonzales",
+      email: "payerGonzales323@gmail.com",
+      address: "carrera 12a #34-56",
+      city: "Cali - Colombia",
+      zipCode: "7600",
+      telephone: "3183456789",
     },
+    btnActive: false,
   });
 
   const setPaymentData = () => {
@@ -51,6 +52,7 @@ const Shopping = () => {
         zipCode: state.user.zipCode,
         telephone: state.user.telephone,
       },
+      btnActive: state.products.length !== 0 ? true : false,
     });
   };
 
@@ -90,7 +92,7 @@ const Shopping = () => {
                         -
                       </button>
                       <button className="border-2 w-5 h-5 xl:w-8 xl:h-8">
-                        5
+                        {item.stok}
                       </button>
                       <button className="border-2 w-5 h-5 xl:w-8 xl:h-8">
                         +
@@ -144,7 +146,6 @@ const Shopping = () => {
               <h3>${getTotal()}</h3>
             </article>
             <article className="flex justify-center p-1 text-white border-b-4 pb-4">
-              {console.log(state.payment)}
               <form method="post" action={state.payment.url}>
                 <input
                   name="merchantId"
@@ -229,6 +230,7 @@ const Shopping = () => {
                   type="submit"
                   value="Checkout"
                   className="bg-green-600 rounded-2xl w-52 h-8 cursor-pointer md:w-80 md:h-12"
+                  disabled={!state.btnActive}
                 />
               </form>
             </article>

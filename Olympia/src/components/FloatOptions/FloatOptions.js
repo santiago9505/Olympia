@@ -11,6 +11,7 @@ import { MdHome } from "react-icons/md";
 import { FiShoppingCart } from 'react-icons/fi';
 import { IoToggleSharp } from 'react-icons/io5'
 import { BiHelpCircle, BiWorld } from 'react-icons/bi';
+import { categories } from '../../constants/categories';
 
 //Components
 import MenuItem from '../Header/MenuItem';
@@ -62,10 +63,11 @@ const FloatOptions = () => {
         </div>
         <div className="flex h-full items-center">
           <ul className={`${state.toggleOptions.showOption === 1 ? 'block': 'hidden'} grid grid-cols-2 grid-rows-2 gap-4 w-full`}>
-            <MenuItem Icon={BsCircle} text="Categoria" type="categories"/>
-            <MenuItem Icon={BsCircle} text="Categoria" type="categories"/>
-            <MenuItem Icon={BsCircle} text="Categoria" type="categories"/>
-            <MenuItem Icon={BsCircle} text="Categoria" type="categories"/>
+            {
+              categories.map((item) => (
+                <MenuItem Icon={BsCircle} text={item.category} type="categories" url={`/products/${item.category}`}/>
+              ))
+            }
           </ul>
           <ul className={`${state.toggleOptions.showOption === 2 ? 'block': 'hidden'} text-sm grid grid-cols-2 grid-rows-3 gap-4 w-full`}>
             <MenuItem Icon={FaGifts} text="Tarjetas de regalo / cupones"/>
