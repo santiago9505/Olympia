@@ -1,8 +1,14 @@
 import React from "react";
 import Shopping from "../../components/Shopping/Shoping.js";
+import Footer from "../../components/Footer/Footer.js";
 
 const Checkout = () => {
-  return <Shopping />;
+  return (
+    <div>
+      <Shopping />
+      <Footer />
+    </div>
+  );
 };
 
 export default Checkout;
