@@ -15,10 +15,11 @@ def create_ord_compra(request):
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+
 @api_view(['GET'])
-def data_compra(request,user_id):
+def data_compra(request):
     if request.method == 'GET':
-        data = Compra.objects.filter(pk=user_id)
-        serializer =OrdeCompraSerializer(data, context={'request': request}, many=True)
-        
+        data = Compra.objects.all()
+        serializer = OrdenCompraSerializer(data, context={'request': request},many=True)
         return Response(serializer.data)

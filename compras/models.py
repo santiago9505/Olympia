@@ -9,7 +9,7 @@ class Compra(models.Model):
 
     #data of product
 
-    product=models.ForeignKey(Producto, related_name='data_product', on_delete=models.CASCADE)
+    product=models.ForeignKey(Producto, related_name='data_compra', on_delete=models.CASCADE)
 
     cantidad=models.PositiveIntegerField()
     # description=models.CharField(max_length=255)
@@ -25,7 +25,7 @@ class Compra(models.Model):
     #producto modena
 
     merchanID=models.IntegerField(default=921610)
-    referenceCode=models.UUIDField(default=uuid.uuid4,editable=False)
+    referenceCode=models.CharField(max_length=20, default='aasndsddskn')
 
 
 

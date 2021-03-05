@@ -36,6 +36,6 @@ urlpatterns = [
 
     # path compras
     path('api/compra/generar_compra', compras_views.create_ord_compra),
-    path('api/compra/generar_compra/<int:user_id>', compras_views.data_compra),
+    path('api/compra/generar_compra/data_compra', compras_views.data_compra),
     
 ]
