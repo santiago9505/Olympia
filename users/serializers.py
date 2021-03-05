@@ -23,6 +23,17 @@ class ProfileSerializer(serializers.ModelSerializer):
         )
 
 
+
+class ProfileCompraSerializer(serializers.ModelSerializer):
+
+        class Meta:
+            model =Profile
+
+            fields=('phone_number','shippingAddres','shippingCity','shippingCountry')
+
+            
+
+
 class UserSerializer(serializers.ModelSerializer):
     profile = ProfileSerializer(read_only=True)
     class Meta:
@@ -36,3 +47,13 @@ class UserSerializer(serializers.ModelSerializer):
         #     user.set_password(password)
         #     user.save()
         #     return user
+
+
+class UserCompraSerializer(serializers.ModelSerializer):
+    
+    profile=ProfileCompraSerializer(read_only=True)
+
+    class Meta:
+        model=User
+
+        fields=('username', 'firs_name','last_name','email','profile')

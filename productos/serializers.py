@@ -26,5 +26,12 @@ class ProductoSerializer(serializers.ModelSerializer):
         fields = ('pk', 'Name', 'price', 'description', 'stok', 'img_url','tag_use','coment')
 
 
+class ProductoCompraSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Producto
+        fields = ( 'Name', 'price', 'description')
+
+
 
 

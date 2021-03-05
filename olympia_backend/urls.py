@@ -35,6 +35,6 @@ urlpatterns = [
     path('api/users/<str:username>', user_views.users_filtrados),
 
     # path compras
-    path('api/compras/', compras_views.data_compra),
+    path('api/compra/generar_compra', compras_views.generar_compra),
     
 ]

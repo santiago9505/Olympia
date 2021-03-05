@@ -2,22 +2,20 @@ from rest_framework import serializers
 from .models import Compra
 
 from users.serializers import UserSerializer
+from users.serializers import UserCompraSerializer
+from productos.serializers import ProductoCompraSerializer
 
 
 
 
-class CompraSerializer(serializers.ModelSerializer):
+class OrdenCompraSerializer(serializers.ModelSerializer):
 
-    data_user=UserSerializer(read_only=True)
+    data_user=UserCompraSerializer(read_only=True)
+    data_product=ProductoCompraSerializer(read_only=True)
+
     class Meta:
         model=Compra
-        fields=('pk',
-        'shippingAddres',
-        'shippingCity',
-        'shippingCountry',
-        'currency',
-        'signature',
-        'tax',
-        'taxReturnBase',
-        'merchanID',
-        'referenceCode','data_user')
+        fields=(
+        'data_product',
+        'cantidad',
+        'data_user')

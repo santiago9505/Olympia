@@ -36,3 +36,11 @@ class Comentario(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Cupones(models.Model):
+
+    cupon_name=models.CharField(max_length=10)
+    descuento=models.DecimalField(max_digits=5,decimal_places=2, default=0.00)
+
+

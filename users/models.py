@@ -54,7 +54,9 @@ class Profile(models.Model):
 
     notifications = models.BooleanField(default=True)
 
-
+    shippingAddres=models.CharField(max_length=255, blank=True)
+    shippingCity=models.CharField(max_length=50, blank=True )
+    shippingCountry=models.CharField(max_length=50,blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)

@@ -9,8 +9,8 @@ class Compra(models.Model):
     #data of product
 
     product=models.ForeignKey(Producto, related_name='data_product', on_delete=models.CASCADE)
-    cantidad=models.IntegerField(max_length=5)
-    
+
+    cantidad=models.PositiveIntegerField()
     # description=models.CharField(max_length=255)
     # amount=models.DecimalField(max_digits=14, decimal_places=2)
 
@@ -21,17 +21,11 @@ class Compra(models.Model):
     # buyerEmail=models.EmailField(max_length=255)
     profile=models.ForeignKey(Profile, related_name='data_profile', on_delete=models.CASCADE)
 
-    #telephone=models.CharField(max_length=20, requiered=True)
-
-    #data of purchase
-    shippingAddres=models.CharField(max_length=255)
-    shippingCity=models.CharField(max_length=50 )
-    shippingCountry=models.CharField(max_length=50)
     #producto modena
 
-    merchanID=models.IntegerField()
+    merchanID=models.IntegerField(default=12345)
 
-    referenceCode=models.IntegerField()
+    referenceCode=models.CharField(max_length=30, default='esteesuncodigode')
 
 
 
