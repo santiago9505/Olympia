@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class Producto(models.Model):
-    Name=models.CharField(max_length=50)
+    name=models.CharField(max_length=50)
 
     price=models.CharField(max_length=10)
 
@@ -24,7 +24,7 @@ class Producto(models.Model):
     
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 
 class Comentario(models.Model):
@@ -35,7 +35,7 @@ class Comentario(models.Model):
     date=models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.texto
 
 
 class Cupones(models.Model):

@@ -15,7 +15,7 @@ class SaveProductoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Producto
-        fields = ('Name', 'price', 'description', 'stok', 'img_url','tag_use')
+        fields = ('name', 'price', 'description', 'stok', 'img_url','tag_use')
 
 
 class ProductoSerializer(serializers.ModelSerializer):
@@ -23,14 +23,14 @@ class ProductoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Producto
-        fields = ('pk', 'Name', 'price', 'description', 'stok', 'img_url','tag_use','coment')
+        fields = ('pk', 'name', 'price', 'description', 'stok', 'img_url','tag_use','coment')
 
 
 class ProductoCompraSerializer(serializers.ModelSerializer):
-
+    
     class Meta:
         model = Producto
-        fields = ( 'Name', 'price', 'description')
+        fields = ('__all__')
 
 
 

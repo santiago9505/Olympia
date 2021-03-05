@@ -2,13 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from users.models import Profile
 from productos.models import Producto
+import uuid
 # Create your models here.
 
 class Compra(models.Model):
 
     #data of product
 
-    product=models.ForeignKey(Producto, related_name='data_product', on_delete=models.CASCADE)
+    product=models.ForeignKey(Producto, related_name='data_compra', on_delete=models.CASCADE)
 
     cantidad=models.PositiveIntegerField()
     # description=models.CharField(max_length=255)
@@ -23,9 +24,8 @@ class Compra(models.Model):
 
     #producto modena
 
-    merchanID=models.IntegerField(default=12345)
-
-    referenceCode=models.CharField(max_length=30, default='esteesuncodigode')
+    merchanID=models.IntegerField(default=921610)
+    referenceCode=models.CharField(max_length=40,blank=True, unique=True, default=uuid.uuid4)
 
 
 
