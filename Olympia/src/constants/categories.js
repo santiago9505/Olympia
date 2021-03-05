@@ -1,11 +1,11 @@
 export const categories = [
   {
-    category: 'Moda',
+    category: "Moda",
   },
   {
-    category: 'Limpieza',
+    category: "Limpieza",
   },
   {
-    category: 'Manufactura',
+    category: "Manufactura",
   },
-]
+];

@@ -30,13 +30,13 @@ const ProfileOptions = () => {
       <div className="grid grid-cols-2 grid-rows-1 gap-x-5">
         <Link
           to="/login"
-          className="block outline-none text-center rounded-full bg-white p-1"
+          className="block outline-none font-bold text-xl text-white text-center rounded-full bg-background_principal p-1"
         >
           Login
         </Link>
         <Link
           to="/signup"
-          className="block outline-none text-center rounded-full bg-white p-1"
+          className="block outline-none font-bold text-xl text-white text-center rounded-full bg-background_principal p-1"
         >
           Register
         </Link>

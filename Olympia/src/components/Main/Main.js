@@ -11,7 +11,7 @@ import Categoria4 from "./Categoria4";
 
 const Main = () => {
   return (
-    <div className="col-span-12 mb-20">
+    <div className="col-span-12 mb-20 bg-white">
       <Publicity />
       <Categories />
       <Popular />

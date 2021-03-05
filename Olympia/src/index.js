@@ -4,9 +4,9 @@ import "./index.css";
 import App from "./routes/App";
 import reportWebVitals from "./reportWebVitals";
 
-const cart = localStorage.getItem('cart');
-if(!cart){
-  localStorage.setItem('cart', JSON.stringify([]));
+const cart = localStorage.getItem("cart");
+if (!cart) {
+  localStorage.setItem("cart", JSON.stringify([]));
 }
 
 ReactDOM.render(
