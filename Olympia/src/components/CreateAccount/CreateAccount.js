@@ -3,31 +3,33 @@ import { Link } from "react-router-dom";
 
 const CreateAccount = () => {
   return (
-    <div className="col-span-12 my-8 mb-20">
-      <h1 className="text-3xl text-center mb-6">Create An Account</h1>
+    <section className="col-span-12 my-8 mb-20 bg-white">
+      <h1 className="text-3xl text-center mb-6 text-black">Create An Account</h1>
       <form className="mx-8" action="">
         <section className="text-xl">
-          <label className="absolute">Email Address*</label>
-          <input className="block border-b-4 my-4" type="text" />
-          <label className="absolute">Password*</label>
-          <input className="block border-b-4 my-4" type="text" />
+          <input placeholder="Email Address*" className="block bg-white my-4 placeholder-principal_gray text-base" type="text" />
+          <p className="relative bottom-4 border-b-4 rounded my-4 w-60 border-principal_blue"></p>
+          <input placeholder="Password*" className="block bg-white my-4 placeholder-principal_gray text-base" type="password" />
+          <p className="relative bottom-4 border-b-4 rounded my-4 w-60 border-principal_blue"></p>
         </section>
         <section className="my-4">
-          <h2 className="text-xl">Date of Birth</h2>
-          <input type="date" />
+          <h2 className="text-black text-xl">Date of Birth</h2>
+          <input type="date" className="pl-4 bg-white pb-1 border-2 border-principal_blue rounded-sm"/>
+        </section>
+        <section className="flex gap-10">
+        <div>
+          <input placeholder="First Name*" className="block bg-white my-4    placeholder-principal_gray w-28 text-base" type="text" />
+          <p className="relative bottom-4 border-b-4 rounded my-4 w-28 border-principal_blue"></p>
+        </div>
+        <div>
+          <input placeholder="Last Name*" className="block bg-white my-4 placeholder-principal_gray w-28 text-base" type="text" />
+          <p className="relative bottom-4 border-b-4 rounded my-4 w-28 border-principal_blue"></p>
+        </div>
         </section>
         <section className="text-xl">
-          <label className="border-b-4 absolute my-4" htmlFor="">
-            First Name*
-          </label>
-          <input className="my-4" type="text" />
-          <label className="border-b-4 absolute my-4" htmlFor="">
-            Last Name*
-          </label>
-          <input type="text my-4" />
-          <h1 className="block mt-4 text-2xl my-1">Gender</h1>
+          <h1 className="block mt-4 text-2xl text-black ">Gender</h1>
           <select
-            className="border-2 border-gray-400 rounded-md text-sm"
+            className="border-2 bg-white border-principal_blue rounded-md text-sm"
             name=""
             id=""
           >
@@ -46,32 +48,28 @@ const CreateAccount = () => {
           <section className="my-4 text-sm text-start">
             <section className="flex">
               <input
-                className="m-1"
+                className="m-1 self-start"
                 type="checkbox"
                 name="terminos"
                 value="1"
               />
-              <p className="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-                qui autem asdasdasdasdasdas asdasdasdsadas elit. Quaerat qui
-                autem asdasdasdasdasdas asdasdasdsadas
+              <p className="text-sm text-black">
+              I wish to receive the latest news and exclusive discounts by receiving "name ecommerce" Marketing Emails
               </p>
             </section>
 
-            <p className="my-4 block text-justify mx-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              repellat consectetur iure. Sapiente nulla dignissimos eligendi eum
-              magnam et de
+            <p className="mt-4 block text-justify text-black">
+            By creating your account, your agree to our Terms and conditions for full details on how and why "name ecommerce" uses your personal data please see our Privacy Notice
             </p>
           </section>
         </section>
         <div className="w-full flex justify-center my-4">
-          <button className="bg-blue-500 text-white rounded-3xl w-40 h-8">
+          <button className="bg-white text-black border-principal_blue border-4 rounded-3xl w-40 h-8 text-base pb-7">
             Create Account
           </button>
         </div>
         <div className="flex justify-center my-6">
-          <p className="text-xs">
+          <p className="text-xs text-principal_gray">
             Already registered?
             <Link to="/login" className="underline">Sign into your Account</Link>
           </p>
@@ -80,7 +78,7 @@ const CreateAccount = () => {
       <article className="mt-6 bg-gray-400 w-10/12 h-52 my-8 mx-auto rounded-2xl p-2">
         <img src="" alt="Promocion" />
       </article>
-    </div>
+    </section>
   );
 };
 

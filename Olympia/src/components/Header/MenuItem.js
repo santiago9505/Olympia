@@ -28,11 +28,11 @@ const MenuItem = ({ Icon, Icon2, text, type, url }) => {
     <li className={`${classList} text-sm `}>
       <Link to={url ? url : "/"} className="block w-full flex items-center ">
         {Icon && (
-          <span className="inline-block mr-2 text-xl icons-color">
+          <span className="inline-block mr-2 text-2xl icons-color">
             <Icon />
           </span>
         )}
-        <span>{text}</span>
+        <span className="text-2xl">{text}</span>
         {Icon2 && (
           <span className="inline-block ml-1 icons-color">
             <Icon2 />

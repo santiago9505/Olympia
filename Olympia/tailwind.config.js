@@ -43,7 +43,8 @@ module.exports = {
       'black': '#060900',
      }),
     boxShadow: {
-      custom: "0 -3px 6px #00000059;"
+      custom: "0 -3px 6px #00000059;",
+      products: "0px 0px 10px 4px #D8E5C5;",
     },
     gridTemplateRows: {
       '4-custom': 'repeat(4, auto)',
