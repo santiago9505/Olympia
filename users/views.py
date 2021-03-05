@@ -49,43 +49,50 @@ def user_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'PUT':
-        
-        serializer = UserCreateSerializer(data=request.data)
-        data = User.objects.filter(username=serializer.data)
+        serializer = UserUpdateSerializer(data=request.data)
         profile_data = request.data.pop("profile")
+        data = User.objects.get(username=request.data["username"])
+        
+        profile = Profile.objects.get(user_id = data.pk)
+        if profile != None:
+            
+            profile.phone_prefix = profile_data["phone_prefix"]
+            profile.phone_number = profile_data["phone_number"]
+            profile.credit_card = profile_data["credit_card"]
 
-        if serializer.is_valid():
-            profile_serializer = ProfileCreateSerializer(data=profile_data)
-            # profile = Profile(**profile_data)
-            # profile.save()
-            if profile_serializer.is_valid():
-                profile_serializer.save()
+            profile.picture = profile_data["picture"]
 
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            profile.address_nickname = profile_data["address_nickname"]
+            profile.address_name = profile_data["address_name"]
+            profile.address_1 = profile_data["address_1"]
+            profile.address_2 = profile_data["address_2"]
+            profile.city = profile_data["city"]
+            profile.zip_code = profile_data["zip_code"]
+            profile.country = profile_data["country"]
+            profile.state = profile_data["state"]
+            profile.shippingAddres = profile.address_nickname + " " + profile.address_name + " " + profile.address_1 + " " + profile.address_2 + " " + profile.city + " " + profile.zip_code
+   
+            profile.save()
+
+            return Response(status=status.HTTP_201_CREATED)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
 
 @api_view(['GET'])
 def users_filtrados(request,username):
-    try:
-        data = User.objects.filter(username=username)
-    except User.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+    if request.method=='GET':
+        try:
+            data = User.objects.filter(username=username)
+        except User.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
-        if request.method=='GET':
-            serializer=UserCreateSerializer(data, context={'request': request}, many=True)
+        serializer=UserCreateSerializer(data, context={'request': request}, many=True)
 
-            return Response(serializer.data)
+        return Response(serializer.data)
 
-        # elif request.method == 'PUT':
-            
-        #     serializer_profile = ProfileCreateSerializer(data=request.data)
-        #     if serializer_profile.is_valid():
-        #         profile.credit_card = request.data["credit_card"]
-        #         profile.prefix_number = request.data["prefix_number"]
-        #         profile.phone_number = request.data["phone_number"]
-        #         profile.save()
-
-        #     return Response(data, status=status.HTTP_201_CREATED)
+        
 
 
 

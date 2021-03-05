@@ -47,6 +47,12 @@ class UserCreateSerializer(serializers.ModelSerializer):
         
         fields = ('id', 'username', 'password', 'first_name','last_name', 'email', 'profile')
 
+class UserUpdateSerializer(serializers.ModelSerializer):
+    profile = ProfileCreateSerializer(read_only=True)
+    class Meta:
+        model = User
+        
+        fields = ('id', 'username', 'first_name','last_name', 'email', 'profile')
 
 
 class ProfileUpdateSerializer(serializers.ModelSerializer):
