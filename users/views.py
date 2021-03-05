@@ -21,9 +21,8 @@ def user_list(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        # commited = False
+        
         serializer = UserCreateSerializer(data=request.data)
-        # username = request.data["username"]
         profile_data = request.data.pop("profile")
         
         
@@ -35,8 +34,6 @@ def user_list(request):
                 profile = Profile(user=user, **profile_data)
                 profile.save()
 
-
-                
             return Response(status=status.HTTP_201_CREATED)
             
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -44,7 +41,7 @@ def user_list(request):
 
 
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'PUT'])
 def users_filtrados(request,username):
         if request.method=='GET':
             try:
@@ -56,14 +53,21 @@ def users_filtrados(request,username):
 
             return Response(serializer.data)
 
-        if request.method == 'POST':
-            try:
-                data = User.objects.filter(username=username)
-            except User.DoesNotExist:
-                return Response(status=status.HTTP_404_NOT_FOUND)
+        elif request.method == 'PUT':
+            # try:
+            #     data = User.objects.filter(username=username)
+            # except User.DoesNotExist:
+            #     return Response(status=status.HTTP_404_NOT_FOUND)
             
-            profile = Profile.Objects.filter(user_id=data.pk)
+            # profile = Profile.objects.filter(user_id=data.pk)
             serializer_profile = ProfileCreateSerializer(data=request.data)
+            if serializer_profile.is_valid():
+                profile.credit_card = request.data["credit_card"]
+                profile.prefix_number = request.data["prefix_number"]
+                profile.phone_number = request.data["phone_number"]
+                profile.save()
+
+            return Response(data, status=status.HTTP_201_CREATED)
 
 
 
