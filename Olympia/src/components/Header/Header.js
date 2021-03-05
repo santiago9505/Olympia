@@ -53,26 +53,24 @@ const Header = () => {
   };
 
   return (
-
-
     <header className="block fixed bottom-0 z-50 w-full shadow-custom bg-background_principal md:hidden">
       <div className="flex flex-row justify-between items-center p-2">
         <div>
           <div
             role="button"
-            className="text-4xl"
+            className="text-4xl icons-color"
             onClick={() => {
               toggleMenu("categories");
             }}
           >
-            <BsListUl />
+            <BsListUl className="" />
           </div>
           <Menu toggle={state.toggle.categories} selector="categories">
             <Categories />
           </Menu>
         </div>
         <div>
-          <div role="button" className="text-4xl">
+          <div role="button" className="text-4xl icons-color">
             <FiSearch />
           </div>
           <Menu toggle={false}>
@@ -84,7 +82,7 @@ const Header = () => {
         <div>
           <div
             role="button"
-            className="text-4xl"
+            className="text-4xl icons-color"
             onClick={() => {
               toggleMenu("profile");
             }}
@@ -98,7 +96,7 @@ const Header = () => {
         <div>
           <div
             role="button"
-            className="text-4xl"
+            className="text-4xl icons-color"
             onClick={() => {
               toggleMenu("cart");
             }}
@@ -112,7 +110,7 @@ const Header = () => {
         <div>
           <div
             role="button"
-            className="text-4xl"
+            className="text-4xl icons-color"
             onClick={() => {
               toggleMenu("options");
             }}
