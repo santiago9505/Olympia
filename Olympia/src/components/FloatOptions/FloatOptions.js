@@ -64,8 +64,8 @@ const FloatOptions = () => {
         <div className="flex h-full items-center">
           <ul className={`${state.toggleOptions.showOption === 1 ? 'block': 'hidden'} grid grid-cols-2 grid-rows-2 gap-4 w-full`}>
             {
-              categories.map((item) => (
-                <MenuItem Icon={BsCircle} text={item.category} type="categories" url={`/products/${item.category}`}/>
+              categories.map((item, i) => (
+                <MenuItem key={i} Icon={BsCircle} text={item.category} type="categories" url={`/products/${item.category}`}/>
               ))
             }
           </ul>
