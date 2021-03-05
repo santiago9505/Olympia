@@ -25,7 +25,7 @@ class Compra(models.Model):
     #producto modena
 
     merchanID=models.IntegerField(default=921610)
-    referenceCode=models.CharField(max_length=20, default='aasndsddskn')
+    referenceCode=models.CharField(max_length=40,blank=True, unique=True, default=uuid.uuid4)
 
 
 

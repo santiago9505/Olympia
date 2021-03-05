@@ -18,6 +18,9 @@ class OrdenCompraSerializer(serializers.ModelSerializer):
     phone_number=serializers.ReadOnlyField(source='profile.phone_number')
     city=serializers.ReadOnlyField(source='profile.city')
     country=serializers.ReadOnlyField(source='profile.country')
+    shippingAddres=serializers.ReadOnlyField(source='profile.shippingAddres')
+
+    zip_code=serializers.ReadOnlyField(source='profile.zip_code')
 
     class Meta:
         model=Compra
@@ -31,13 +34,6 @@ class OrdenCompraSerializer(serializers.ModelSerializer):
         'user_email',
         'phone_number',
         'city',
-        'country')
-
-
-
-class ProductoPurchaseSerializer(serializers.ModelSerializer):
-    #data_compra=OrdenCompraSerializer(read_only=True, many=True)
-
-    class Meta:
-        model = Producto
-        fields = ('pk','price', 'name', 'description')
+        'country',
+        'shippingAddres',
+        'zip_code')

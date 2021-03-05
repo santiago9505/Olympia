@@ -18,8 +18,8 @@ def create_ord_compra(request):
 
 
 @api_view(['GET'])
-def data_compra(request):
+def data_compra(request, user_id):
     if request.method == 'GET':
-        data = Compra.objects.all()
+        data = Compra.objects.filter(user=user_id)
         serializer = OrdenCompraSerializer(data, context={'request': request},many=True)
         return Response(serializer.data)

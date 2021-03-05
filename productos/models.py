@@ -24,7 +24,7 @@ class Producto(models.Model):
     
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 
 class Comentario(models.Model):
@@ -35,7 +35,7 @@ class Comentario(models.Model):
     date=models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.texto
 
 
 class Cupones(models.Model):

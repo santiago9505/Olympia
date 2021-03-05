@@ -19,7 +19,7 @@ def productos_list(request):
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
-            
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
@@ -40,7 +40,7 @@ def productos_filtrados(request,product_type):
 @api_view(['POST'])
 def coment_save(resquest):
     if resquest.method=='POST':
-        serializer=ComentarioSerializer(data=resquest.data)
+        serializer=CompraSerializer(data=resquest.data)
         
         if serializer.is_valid():
             serializer.save()
