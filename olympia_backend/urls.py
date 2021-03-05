@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, re_path
 from productos import views as product_views
 from django.conf.urls import url
+from django.urls import include
 from users import views as user_views
 from compras import views as compras_views
 
@@ -38,4 +39,6 @@ urlpatterns = [
     path('api/compra/generar_compra', compras_views.create_ord_compra),
     path('api/compra/generar_compra/<int:user_id>', compras_views.data_compra),
     
+    # path login
+      path('', include(('users.urls', 'users'), namespace='users')),
 ]

@@ -1,12 +1,21 @@
 from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
 
+#models
+from django.contrib.auth.models import User
+from .models import Profile
+
+# Django REST Framework
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from rest_framework import status, viewsets
+from rest_framework.decorators import action
 
-from .models import Profile
+# Serializers
+from users.serializers import UserLoginSerializer, UserModelSerializer
 from .serializers import *
+
+
 # Create your views here.
 
 @api_view(['GET', 'POST', 'PUT'])
@@ -80,7 +89,24 @@ def users_filtrados(request,username):
 
 
 
-            
+class UserViewSet(viewsets.GenericViewSet):
+
+    queryset = User.objects.filter(is_active=True)
+    serializer_class = UserModelSerializer
+
+    # Detail define si es una petición de detalle o no, en methods añadimos el método permitido, en nuestro caso solo vamos a permitir post
+    @action(detail=False, methods=['post'])
+    def login(self, request):
+        """User sign in."""
+        print(request.data)
+        serializer = UserLoginSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user, token = serializer.save()
+        data = {
+            'user': UserModelSerializer(user).data,
+            'access_token': token
+        }
+        return Response(data, status=status.HTTP_201_CREATED)       
 
             
 
