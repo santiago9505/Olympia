@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .border_green {
+    border-left: 4px solid #065F46;
+  }
+
   * {
     outline: none !important;
   }

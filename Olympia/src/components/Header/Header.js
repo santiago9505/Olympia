@@ -54,6 +54,7 @@ const Header = () => {
 
   return (
 
+
     <header className="block fixed bottom-0 z-50 w-full shadow-custom bg-background_principal md:hidden">
       <div className="flex flex-row justify-between items-center p-2">
         <div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //Libs
 import ArbolIcon from "../../assets/static/arbol-icon.svg";
 import LupaIcon from "../../assets/static/lupa.svg";
-import { FiShoppingCart, FiMenu } from "react-icons/fi";
+import { FiShoppingCart, FiMenu, FiSearch } from "react-icons/fi";
 import { FaGifts, FaHeart } from "react-icons/fa";
 import { HiFire } from "react-icons/hi";
 import { BsPeopleCircle } from "react-icons/bs";
@@ -45,11 +45,7 @@ const Navbar = () => {
             className="w-full h-8 rounded-full px-3 focus:outline-none"
             type="text"
           />
-          <img
-            className="absolute right-6 w-8 border-l-2 p-1"
-            src={LupaIcon}
-            alt="Hojita"
-          />
+          <FiSearch className="cursor-pointer border_green h-full absolute right-3 w-8 border-l-2 p-1 text-3xl"/>
         </section>
         <section className="hidden col-span-1 md:block">
           <div>
