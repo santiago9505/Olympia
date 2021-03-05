@@ -9,18 +9,18 @@ import { CgImage } from "react-icons/cg";
 
 const Login = () => {
   return (
-    <div className="col-span-12 grid grid-cols-1 grid-rows-4-custom gap-4 items-center w-full mb-16 p-4">
-      <div className="text-center text-2xl">
+    <div className="col-span-12 grid grid-cols-1 grid-rows-4-custom gap-4 items-center w-full mb-16 px-5 py-8 bg-white">
+      <div className="text-center text-3xl text-black">
         <h1>
           Log into
           <br />
-          "Name E-Commerce"
+          Bircor Graphene
         </h1>
       </div>
       <div>
         <form className="flex flex-col mb-2 items-center md:grid md:grid-cols-1 md:justify-items-center md:gap-4 md:mt-8">
           <div className="md:flex md:gap-4">
-            <label className="flex justify-center" htmlFor="email">
+            <label className="flex justify-start ml-3 text-black" htmlFor="email">
               Account
             </label>
             <input
@@ -28,11 +28,11 @@ const Login = () => {
               id="email"
               name="email"
               placeholder="Email address or member ID"
-              className="flex text-sm py-1 px-2 bg-gray-400 placeholder-gray-600 rounded-full mb-3 w-80"
+              className="flex text-sm py-1 px-2 bg-white placeholder-principal_gray rounded-full mb-3 w-80 border-principal_blue border-4"
             />
           </div>
           <div className="md:flex md:gap-3">
-            <label className="flex justify-center" htmlFor="password">
+            <label className="flex justify-start ml-3 text-black" htmlFor="password">
               Password
             </label>
             <input
@@ -40,20 +40,20 @@ const Login = () => {
               id="password"
               name="password"
               placeholder="Password"
-              className="flex text-sm py-1 px-2 bg-gray-400 placeholder-gray-600 rounded-full mb-3 w-80"
+              className="flex text-sm py-1 px-2 bg-white placeholder-principal_gray rounded-full mb-3 w-80 border-principal_blue border-4"
             />
           </div>
 
-          <label className="mb-3">
-            <input type="checkbox" name="staySigned" className="mr-2" />
+          <label className="self-start ml-4 mb-3 text-black text-sm">
+            <input type="checkbox" name="staySigned" className="mr-2 text-sm " />
             Stay signed in
           </label>
           <input
             type="submit"
             value="Sign in"
-            className="w-40 py-0.5 m-auto mb-1 rounded-full text-lg border-2 border-gray-400 bg-white active:bg-gray-400 md:w-52"
+            className="w-28 py-0.5 m-auto mb-3 rounded-full text-lg border-4 border-principal_blue bg-white active:bg-gray-400 md:w-52"
           />
-          <p className="text-xs text-center underline">
+          <p className="text-xs text-principal_gray text-center underline">
             I've forgotten my password
           </p>
         </form>
@@ -79,8 +79,8 @@ const Login = () => {
             <FaLinkedin />
           </span>
         </div>
-        <p className="text-xs">
-          New to "name e-commerce"? &nbsp;
+        <p className="text-xs text-principal_gray">
+          New to Bircor Graphene? &nbsp;
           <Link to="/signup" className="underline">
             Create an account
           </Link>

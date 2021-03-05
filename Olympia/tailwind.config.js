@@ -3,6 +3,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
 
+    placeholderColor: theme => theme('colors'),
+
+     placeholderColor: {
+
+      'principal_gray': '#5E605B',
+
+     },
+
     borderColor: theme => ({
 
       ...theme('colors'),

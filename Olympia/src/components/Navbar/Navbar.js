@@ -33,7 +33,7 @@ const Navbar = () => {
       <div
         className={`${
           state.toggleLateralMenu.isOpen ? "sticky top-0" : "relative"
-        } px-1 h-12 top-0 z-50 grid grid-cols-12 bg-background_principal w-full col-span-12 justify-items-center place-content-center pr-4 md:gap-2`}
+        } px-1 h-14 top-0 z-50 grid grid-cols-12 bg-background_principal w-full col-span-12 justify-items-center place-content-center pr-4 md:gap-2`}
       >
         <article className="col-span-2">
           <Link to="/home">
