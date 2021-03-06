@@ -19,6 +19,8 @@ from productos import views as product_views
 from django.conf.urls import url
 from users import views as user_views
 from compras import views as compras_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,5 +39,6 @@ urlpatterns = [
     # path compras
     path('api/compra/generar_compra', compras_views.create_ord_compra),
     path('api/compra/generar_compra/<int:user_id>', compras_views.data_compra),
-    
-]
+
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+

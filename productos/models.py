@@ -20,8 +20,8 @@ class Producto(models.Model):
         ('Manufactura','Productos de Manufactura')
     ]
     tag_use=models.CharField(choices=product_choices, max_length=50)
-    
-    
+
+
 
     def __str__(self):
         return self.name
