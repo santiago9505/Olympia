@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
+
+//Libs
+import { API_URL } from '../../constants/';
+import axios from 'axios';
 
 const data = [
   {
-    id: "1",
+    pk: "1",
     name: "Toallitas Húmedas Biodegradables",
     price: "144900",
     description:
@@ -14,7 +18,7 @@ const data = [
     tag_use: "Limpieza",
   },
   {
-    id: "2",
+    pk: "2",
     name: "Toallitas Húmedas Biodegradables",
     price: "144900",
     description:
@@ -25,7 +29,7 @@ const data = [
     tag_use: "Limpieza",
   },
   {
-    id: "3",
+    pk: "3",
     name: "Toallitas Húmedas Biodegradables",
     price: "144900",
     description:
@@ -36,7 +40,7 @@ const data = [
     tag_use: "Limpieza",
   },
   {
-    id: "4",
+    pk: "4",
     name: "Toallitas Húmedas Biodegradables",
     price: "144900",
     description:
@@ -47,7 +51,7 @@ const data = [
     tag_use: "Limpieza",
   },
   {
-    id: "5",
+    pk: "5",
     name: "Toallitas Húmedas Biodegradables",
     price: "144900",
     description:
@@ -65,6 +69,32 @@ const Products = ({
     params: { category },
   },
 }) => {
+  const [state, setState] = useState({
+    data: [],
+  });
+
+  const fecthData = async() => {
+    try {
+      const { data } = await axios({
+        url: `${API_URL}/productos/${category}`,
+        method: 'get',
+      });
+
+      if(data && Array.isArray(data)){
+        setState({ data });
+      } else {
+        return <h1>Lamentamos esto, tuvimos un error. Intentalo mas tarde</h1>
+      }
+
+    } catch (error) {
+      return <h1>Lamentamos esto, tuvimos un error. Intentalo mas tarde</h1>
+    }
+  }
+
+  useEffect(() => {
+    fecthData();
+  }, [state.data]);
+
   return (
     <div className="mb-20 p-4">
       <div className="text-4xl mt-8 font-bold text-black mb-8">

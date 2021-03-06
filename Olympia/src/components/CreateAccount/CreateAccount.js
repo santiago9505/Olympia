@@ -1,28 +1,82 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+//Libs
+import { API_URL } from '../../constants/';
+import axios from 'axios';
+
 const CreateAccount = () => {
+  const [state, setState] = useState({
+    data: [],
+    loading: false,
+    error: false,
+    form: {
+      "email": '',
+      "password": '',
+      "first_name": '',
+      "last_name": '',
+      "username": '',
+      "profile": null,
+    }
+  });
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    const { form : { email, password, first_name, last_name } } = state;
+
+    if(email === "" || password === "" || first_name === "" || last_name === ""){
+      alert('Los campos no pueden estár vacios');
+      return false;
+    }
+
+    try {
+      const { data } =  await axios({
+        url: `${API_URL}/users/`,
+        method: 'post',
+        body: state.form,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+    } catch (error) {
+      return <h1>Hubo un error, por favor intentalo mas tarde</h1>
+    }
+  }
+
+  const handleInputAccount = (e) => {
+    setState({
+      ...state,
+      form: {
+        ...state.form,
+        [`${e.target.name}`]: e.target.value,
+        username: state.form.first_name + state.form.last_name,
+      }
+    });
+  }
+
   return (
     <section className="col-span-12 my-8 mb-20 bg-white">
       <h1 className="text-3xl text-center mb-6 text-black">Create An Account</h1>
-      <form className="mx-8" action="">
+      <form className="mx-8" onSubmit={handleSubmit}>
         <section className="text-xl">
-          <input placeholder="Email Address*" className="block bg-white my-4 placeholder-principal_gray text-base" type="text" />
+          <input placeholder="Email Address*" className="block bg-white my-4 placeholder-principal_gray text-base" type="text" name="email" onChange={handleInputAccount}/>
           <p className="relative bottom-4 border-b-4 rounded my-4 w-60 border-principal_blue"></p>
-          <input placeholder="Password*" className="block bg-white my-4 placeholder-principal_gray text-base" type="password" />
+          <input placeholder="Password*" className="block bg-white my-4 placeholder-principal_gray text-base" type="password" name="password" onChange={handleInputAccount}/>
           <p className="relative bottom-4 border-b-4 rounded my-4 w-60 border-principal_blue"></p>
         </section>
         <section className="my-4">
           <h2 className="text-black text-xl">Date of Birth</h2>
-          <input type="date" className="pl-4 bg-white pb-1 border-2 border-principal_blue rounded-sm"/>
+          <input type="date" className="pl-4 bg-white pb-1 border-2 border-principal_blue rounded-sm" name="date_of_birth"/>
         </section>
         <section className="flex gap-10">
         <div>
-          <input placeholder="First Name*" className="block bg-white my-4    placeholder-principal_gray w-28 text-base" type="text" />
+          <input placeholder="First Name*" className="block bg-white my-4    placeholder-principal_gray w-28 text-base" type="text" name="first_name" onChange={handleInputAccount}/>
           <p className="relative bottom-4 border-b-4 rounded my-4 w-28 border-principal_blue"></p>
         </div>
         <div>
-          <input placeholder="Last Name*" className="block bg-white my-4 placeholder-principal_gray w-28 text-base" type="text" />
+          <input placeholder="Last Name*" className="block bg-white my-4 placeholder-principal_gray w-28 text-base" type="text" name="last_name" onChange={handleInputAccount}/>
           <p className="relative bottom-4 border-b-4 rounded my-4 w-28 border-principal_blue"></p>
         </div>
         </section>
@@ -30,17 +84,12 @@ const CreateAccount = () => {
           <h1 className="block mt-4 text-2xl text-black ">Gender</h1>
           <select
             className="border-2 bg-white border-principal_blue rounded-md text-sm"
-            name=""
-            id=""
+            name="gender"
           >
-            <option className="text-xs" disabled selected>
-              Choose Gender
-            </option>
-
-            <option className="text-xs" value="">
+            <option className="text-xs" value="female">
               Female
             </option>
-            <option className="text-xs" value="">
+            <option className="text-xs" value="male">
               Male
             </option>
             <option className="text-xs">Preffer not say</option>
@@ -64,7 +113,7 @@ const CreateAccount = () => {
           </section>
         </section>
         <div className="w-full flex justify-center my-4">
-          <button className="bg-white text-black border-principal_blue border-4 rounded-3xl w-40 h-8 text-base pb-7">
+          <button type="submit" className="bg-white text-black border-principal_blue border-4 rounded-3xl w-40 h-8 text-base pb-7">
             Create Account
           </button>
         </div>

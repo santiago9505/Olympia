@@ -18,35 +18,35 @@ def user_list(request):
 
     if request.method == 'GET':
         serializer = UserCreateSerializer(data, context={'request': request}, many=True)
-        
+
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        
+
         serializer = UserCreateSerializer(data=request.data)
         profile_data = request.data.pop("profile")
-        
-        
+
+
         if serializer.is_valid():
             user = User.objects.create_user(**request.data)
             profile_serializer = ProfileCreateSerializer(data=profile_data)
-            
+
             if profile_serializer.is_valid():
                 profile = Profile(user=user, **profile_data)
                 profile.save()
 
             return Response(status=status.HTTP_201_CREATED)
-            
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'PUT':
         serializer = UserUpdateSerializer(data=request.data)
         profile_data = request.data.pop("profile")
         data = User.objects.get(username=request.data["username"])
-        
+
         profile = Profile.objects.get(user_id = data.pk)
         if profile != None:
-            
+
             profile.phone_prefix = profile_data["phone_prefix"]
             profile.phone_number = profile_data["phone_number"]
             profile.credit_card = profile_data["credit_card"]
@@ -62,7 +62,7 @@ def user_list(request):
             profile.country = profile_data["country"]
             profile.state = profile_data["state"]
             profile.shippingAddres = profile.address_nickname + " " + profile.address_name + " " + profile.address_1 + " " + profile.address_2 + " " + profile.city + " " + profile.zip_code
-   
+
             profile.save()
 
             return Response(status=status.HTTP_201_CREATED)
@@ -72,7 +72,7 @@ def user_list(request):
 
 @api_view(['GET'])
 def users_filtrados(request,username):
-    
+
     if request.method=='GET':
         try:
             data = User.objects.filter(username=username)
@@ -83,12 +83,12 @@ def users_filtrados(request,username):
 
         return Response(serializer.data)
 
-        
 
 
 
-            
 
-            
+
+
+
 
 

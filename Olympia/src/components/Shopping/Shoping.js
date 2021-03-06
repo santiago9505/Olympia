@@ -5,20 +5,21 @@ import md5 from "md5";
 import { paymentData, apiKey } from "../../constants/paymentData";
 import { getCart, getTotal, deleteItem } from "../../constants/Cart";
 import { MdDelete } from "react-icons/md";
+import publicidad1 from "../../assets/static/publicidad1.jpg";
 
 const Shopping = () => {
-  const referenceCode = "9";
+  const referenceCode = new Date() + ' 1';
 
   const [state, setState] = useState({
     products: getCart(),
     payment: paymentData,
     user: {
-      name: "Payer Gonzales",
-      email: "payerGonzales323@gmail.com",
-      address: "carrera 12a #34-56",
-      city: "Cali - Colombia",
-      zipCode: "7600",
-      telephone: "3183456789",
+      name: "",
+      email: "",
+      address: "",
+      city: "",
+      zipCode: "",
+      telephone: "",
     },
     btnActive: false,
   });
@@ -76,7 +77,7 @@ const Shopping = () => {
         <div className="xl:block">
           {state.products.length !== 0 &&
             state.products.map((item) => (
-              <div className="grid grid-cols-3 w-full justify-items-center pb-8 align-items-center my-16 gap-2 border-b-4 md:flex md:justify-center md:w-11/12 md:gap-10 xl:border-b-4">
+              <div key={item.pk} className="grid grid-cols-3 w-full justify-items-center pb-8 align-items-center my-16 gap-2 border-b-4 md:flex md:justify-center md:w-11/12 md:gap-10 xl:border-b-4">
                 <div className="w-4/6 md:w-3/6 flex justify-start">
                   <article className="rounded-2xl w-28 h-24 xl:w-auto">
                     <img
@@ -237,10 +238,10 @@ const Shopping = () => {
           </div>
 
           <div className="">
-            <article className="h-96 flex justify-center pb-10">
+            <article className="h-96 flex justify-center pb-10 overflow-hidden">
               <img
                 className="bg-red-500 mt-8 w-96 h-full rounded-3xl p-2"
-                src=""
+                src={publicidad1}
                 alt="Publicidad"
               />
             </article>

@@ -1,6 +1,7 @@
 const addToCart = (item) => {
+  console.log(item);
   const cart = JSON.parse(localStorage.getItem("cart"));
-  if (!cart.some((cartItem) => cartItem.id.toString() === item.id.toString())) {
+  if (!cart.some((cartItem) => cartItem.pk.toString() === item.pk.toString())) {
     cart.push(item);
     localStorage.setItem("cart", JSON.stringify(cart));
   } else {
@@ -15,7 +16,7 @@ const getCart = () => {
 const deleteItem = (item) => {
   const cart = JSON.parse(localStorage.getItem("cart"));
   const itemPosition = cart.findIndex(
-    (cartItem) => cartItem.id.toString() === item.id.toString()
+    (cartItem) => cartItem.pk.toString() === item.pk.toString()
   );
   cart.splice(itemPosition, 1);
   localStorage.setItem("cart", JSON.stringify(cart));

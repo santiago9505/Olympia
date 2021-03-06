@@ -7,8 +7,8 @@ from .serializers import *
 
 @api_view(['POST'])
 def create_ord_compra(request):
-    if resquest.method=='POST':
-        serializer=OrdenCompraSerializer(data=resquest.data)
+    if request.method=='POST':
+        serializer=OrdenCompraSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)
