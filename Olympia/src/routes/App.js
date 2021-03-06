@@ -9,9 +9,9 @@ import Profile from "../pages/Profile/Profile";
 import Address from "../pages/Profile/Address";
 import PaymentMethod from "../pages/PaymentMethod/PaymentMethod";
 import Checkout from "../pages/Checkout/Checkout";
-import paymentConfirmation from '../pages/PaymentConfirmation/PaymentConfirmation';
-import Products from '../pages/Products/Products';
-import ProductDetails from '../pages/ProductDetails/ProductDetails';
+import paymentConfirmation from "../pages/PaymentConfirmation/PaymentConfirmation";
+import Products from "../pages/Products/Products";
+import ProductDetails from "../pages/ProductDetails/ProductDetails";
 
 const App = () => (
   <BrowserRouter>
@@ -27,7 +27,11 @@ const App = () => (
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/products/:category" component={Products} />
         <Route exact path="/product" component={ProductDetails} />
-        <Route exact path="/payment-confirmation" component={paymentConfirmation} />
+        <Route
+          exact
+          path="/payment-confirmation"
+          component={paymentConfirmation}
+        />
       </Switch>
     </Layout>
   </BrowserRouter>
