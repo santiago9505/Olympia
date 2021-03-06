@@ -4,7 +4,7 @@ import Producto1 from "../../assets/static/producto1.jpg";
 
 const Popular = () => {
   return (
-    <div className="mt-6 xl:mt-20">
+    <div className="mt-6 xl:mt-20 hidden">
       <h1 className="text-3xl font-bold m-2 text-start xl:text-left xl:ml-24 text-black">
         Destacado
       </h1>
