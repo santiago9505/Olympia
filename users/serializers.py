@@ -95,19 +95,23 @@ class UserModelSerializer(serializers.ModelSerializer):
             'first_name',
             'last_name',
             'email',
-            'password',
+            
         )
 
 class UserLoginSerializer(serializers.Serializer):
 
     # Campos que vamos a requerir
-    email= serializers.EmailField()
+    username = serializers.CharField()
     password = serializers.CharField()
 
     # Primero validamos los datos
     def validate(self, data):
         # authenticate recibe las credenciales, si son válidas devuelve el objeto del usuario
-        user = authenticate(username=data['username'], password=data['password'])
+        print(data)
+        # print(data[0].values())
+        # print(data[1])
+        user = authenticate(username=data["username"], password=data["password"])
+
         if not user:
             raise serializers.ValidationError('Las credenciales no son válidas')
 
